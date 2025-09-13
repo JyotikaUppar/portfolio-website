@@ -108,7 +108,6 @@ Source code: https://github.com/JyotikaUppar/CurrencyConvertor
     
     // Save the PDF
     doc.save('Jyotika_Uppar_Resume.pdf');
-    window.URL.revokeObjectURL(url);
   };
 
   return (
