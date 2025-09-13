@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Download } from 'lucide-react';
-import resumePDF from '../assets/resume.pdf';
+import resumePDF from '../assests/resume.pdf';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
