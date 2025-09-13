@@ -21,15 +21,16 @@ const Header = () => {
     }
   };
 
-  const handleResumeDownload = () => {
-    // In a real implementation, this would download the actual resume
-    const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Jyotika_Uppar_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+ import resumePDF from '../assets/resume.pdf';
+
+const handleResumeDownload = () => {
+  const link = document.createElement('a');
+  link.href = resumePDF; // imported file path
+  link.download = 'Jyotika_Uppar_Resume.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
