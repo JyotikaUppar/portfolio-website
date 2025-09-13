@@ -24,7 +24,7 @@ const Header = () => {
   const handleResumeDownload = () => {
     // In a real implementation, this would download the actual resume
     const link = document.createElement('a');
-    link.href = '/src/assests/resume.pdf';
+    link.href = '/resume.pdf';
     link.download = 'Jyotika_Uppar_Resume.pdf';
     document.body.appendChild(link);
     link.click();
