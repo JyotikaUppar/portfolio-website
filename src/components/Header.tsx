@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Download } from 'lucide-react';
+import resumePDF from '../assets/resume.pdf';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +21,6 @@ const Header = () => {
       setIsOpen(false);
     }
   };
-
- import resumePDF from '../assets/resume.pdf';
 
 const handleResumeDownload = () => {
   const link = document.createElement('a');
