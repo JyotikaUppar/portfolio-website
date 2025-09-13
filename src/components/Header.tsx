@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Download } from 'lucide-react';
-import resumePDF from '../assests/JyotikaUpparResume.pdf';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,14 +21,49 @@ const Header = () => {
     }
   };
 
-const handleResumeDownload = () => {
-  const link = document.createElement('a');
-  link.href = resumePDF; // imported file path
-  link.download = 'Jyotika_Uppar_Resume.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+  const handleResumeDownload = () => {
+    // Create resume content as text
+    const resumeContent = `
+JYOTIKA UPPAR
+Email: jayauppar2@gmail.com | Phone: 9324781880 | Location: Mumbai
+Portfolio: https://fluffy-squirrel-b0e004.netlify.app/
+
+SUMMARY
+Highly motivated B.Sc. IT student with a strong foundation in Artificial Intelligence, Machine Learning, and Web Development. Skilled in Python, Java, and JavaScript, with a passion for building innovative solutions and tackling challenging problems. Adaptable and eager to learn, I am seeking an internship opportunity to apply my technical skills, gain industry exposure, and grow into a well-rounded technology professional.
+
+TECHNICAL SKILLS
+Programming Languages: JavaScript (ES6+), Dart, Java, Python
+Web Development: HTML5, CSS3, React, Next.js
+Mobile Development: Flutter, Dart
+Databases & Backend: PostgreSQL, Node.js, Express.js, Firebase
+Tools & Platforms: Git/GitHub, Docker, npm, VS Code, Figma, Eclipse, Android Studio
+
+PROJECTS
+
+Currency Converter — Mobile Application
+Tech Stack: Flutter (Dart), Material Design Widgets
+Description: A simple and intuitive mobile application that allows users to convert currencies in real-time. The app provides a user-friendly interface to input values and view equivalent amounts in different currencies, enhancing accessibility for students and travelers.
+
+Key Highlights:
+• Built with Flutter for cross-platform compatibility on Android and iOS
+• Implemented clean and modular code structure for maintainability
+• Designed with Material UI components for a responsive and modern interface
+• Lightweight and efficient, ensuring quick conversions without delays
+
+Source code: https://github.com/JyotikaUppar/CurrencyConvertor
+    `.trim();
+
+    // Create and download as text file
+    const blob = new Blob([resumeContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Jyotika_Uppar_Resume.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+  };
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
