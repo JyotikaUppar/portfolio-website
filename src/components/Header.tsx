@@ -31,6 +31,14 @@ Portfolio: https://fluffy-squirrel-b0e004.netlify.app/
 SUMMARY
 Highly motivated B.Sc. IT student with a strong foundation in Artificial Intelligence, Machine Learning, and Web Development. Skilled in Python, Java, and JavaScript, with a passion for building innovative solutions and tackling challenging problems. Adaptable and eager to learn, I am seeking an internship opportunity to apply my technical skills, gain industry exposure, and grow into a well-rounded technology professional.
 
+EDUCATION
+Bachelor of Science in Information Technology
+Shreemati Nathibai Damodar Thackersey Women's University | 2023 - 2026
+• First Year CGPA: 7.73
+• Second Year CGPA: 8.5
+• Currently in Third Year
+• Consistent academic improvement demonstrating dedication and growth mindset
+
 TECHNICAL SKILLS
 Programming Languages: JavaScript (ES6+), Dart, Java, Python
 Web Development: HTML5, CSS3, React, Next.js
@@ -74,37 +82,49 @@ Source code: https://github.com/JyotikaUppar/CurrencyConvertor
     const summaryLines = doc.splitTextToSize(summaryText, 170);
     doc.text(summaryLines, 20, 65);
     
+    // Education section
+    doc.setFontSize(16);
+    doc.text('EDUCATION', 20, 95);
+    doc.setFontSize(12);
+    doc.text('Bachelor of Science in Information Technology', 20, 105);
+    doc.setFontSize(11);
+    doc.text('Shreemati Nathibai Damodar Thackersey Women\'s University | 2023 - 2026', 20, 112);
+    doc.text('• First Year CGPA: 7.73', 20, 119);
+    doc.text('• Second Year CGPA: 8.5', 20, 126);
+    doc.text('• Currently in Third Year', 20, 133);
+    doc.text('• Consistent academic improvement demonstrating dedication and growth mindset', 20, 140);
+    
     // Technical Skills section
     doc.setFontSize(16);
-    doc.text('TECHNICAL SKILLS', 20, 95);
+    doc.text('TECHNICAL SKILLS', 20, 155);
     doc.setFontSize(11);
-    doc.text('Programming Languages: JavaScript (ES6+), Dart, Java, Python', 20, 105);
-    doc.text('Web Development: HTML5, CSS3, React, Next.js', 20, 112);
-    doc.text('Mobile Development: Flutter, Dart', 20, 119);
-    doc.text('Databases & Backend: PostgreSQL, Node.js, Express.js, Firebase', 20, 126);
-    doc.text('Tools & Platforms: Git/GitHub, Docker, npm, VS Code, Figma, Eclipse, Android Studio', 20, 133);
+    doc.text('Programming Languages: JavaScript (ES6+), Dart, Java, Python', 20, 165);
+    doc.text('Web Development: HTML5, CSS3, React, Next.js', 20, 172);
+    doc.text('Mobile Development: Flutter, Dart', 20, 179);
+    doc.text('Databases & Backend: PostgreSQL, Node.js, Express.js, Firebase', 20, 186);
+    doc.text('Tools & Platforms: Git/GitHub, Docker, npm, VS Code, Figma, Eclipse, Android Studio', 20, 193);
     
     // Projects section
     doc.setFontSize(16);
-    doc.text('PROJECTS', 20, 150);
+    doc.text('PROJECTS', 20, 210);
     
     doc.setFontSize(14);
-    doc.text('Currency Converter — Mobile Application', 20, 160);
+    doc.text('Currency Converter — Mobile Application', 20, 220);
     doc.setFontSize(11);
-    doc.text('Tech Stack: Flutter (Dart), Material Design Widgets', 20, 167);
+    doc.text('Tech Stack: Flutter (Dart), Material Design Widgets', 20, 227);
     
     const projectDesc = 'A simple and intuitive mobile application that allows users to convert currencies in real-time. The app provides a user-friendly interface to input values and view equivalent amounts in different currencies, enhancing accessibility for students and travelers.';
     const projectLines = doc.splitTextToSize(projectDesc, 170);
-    doc.text(projectLines, 20, 175);
+    doc.text(projectLines, 20, 235);
     
     doc.setFontSize(11);
-    doc.text('Key Highlights:', 20, 195);
-    doc.text('• Built with Flutter for cross-platform compatibility on Android and iOS', 25, 202);
-    doc.text('• Implemented clean and modular code structure for maintainability', 25, 209);
-    doc.text('• Designed with Material UI components for a responsive and modern interface', 25, 216);
-    doc.text('• Lightweight and efficient, ensuring quick conversions without delays', 25, 223);
+    doc.text('Key Highlights:', 20, 255);
+    doc.text('• Built with Flutter for cross-platform compatibility on Android and iOS', 25, 262);
+    doc.text('• Implemented clean and modular code structure for maintainability', 25, 269);
+    doc.text('• Designed with Material UI components for a responsive and modern interface', 25, 276);
+    doc.text('• Lightweight and efficient, ensuring quick conversions without delays', 25, 283);
     
-    doc.text('Source code: https://github.com/JyotikaUppar/CurrencyConvertor', 20, 235);
+    doc.text('Source code: https://github.com/JyotikaUppar/CurrencyConvertor', 20, 295);
     
     // Save the PDF
     doc.save('Jyotika_Uppar_Resume.pdf');
@@ -127,6 +147,12 @@ Source code: https://github.com/JyotikaUppar/CurrencyConvertor
               className="text-slate-300 hover:text-white transition-colors duration-200"
             >
               About
+            </button>
+            <button
+              onClick={() => scrollToSection('education')}
+              className="text-slate-300 hover:text-white transition-colors duration-200"
+            >
+              Education
             </button>
             <button
               onClick={() => scrollToSection('projects')}
@@ -173,6 +199,12 @@ Source code: https://github.com/JyotikaUppar/CurrencyConvertor
                 className="text-slate-300 hover:text-white transition-colors duration-200 text-left"
               >
                 About
+              </button>
+              <button
+                onClick={() => scrollToSection('education')}
+                className="text-slate-300 hover:text-white transition-colors duration-200 text-left"
+              >
+                Education
               </button>
               <button
                 onClick={() => scrollToSection('projects')}
