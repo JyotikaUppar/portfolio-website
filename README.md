@@ -133,8 +133,6 @@ This project is licensed under the **MIT License**.
 ## Contact
 
 👩 Author: **Jyotika Uppar**
-📧 Email: *[your.email@example.com](jayauppar2@gmail.com)*
+📧 Email: *(jayauppar2@gmail.com)*
 🌐 Portfolio: [Portfolio Website](https://fluffy-squirrel-b0e004.netlify.app/)
 
-Do you want me to also **add a Projects section** in the README where you can list out each project (with links/screenshots), or keep it minimal?
-```
