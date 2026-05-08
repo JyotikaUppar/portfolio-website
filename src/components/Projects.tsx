@@ -1,122 +1,132 @@
-import React from 'react';
-import { Github, ExternalLink, Code } from 'lucide-react';
+import { Github, ExternalLink, Layers, Sparkles } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Web App",
-      role: "Full-Stack Developer",
-      description: "A complete e-commerce solution with user authentication, product catalog, shopping cart, and payment integration. Features responsive design and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Express", "Stripe API"],
-      github: "https://github.com/Rakshita123136/ecommerce-app",
-      demo: "https://ecommerce-demo.vercel.app",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800"
+      title: "BMI Calculator",
+      problem: "Quickly calculating health metrics can be cumbersome without a dedicated, clean interface.",
+      solution: "Developed a sleek, interactive BMI calculator with real-time feedback and health category classification.",
+      tech: ["JavaScript", "HTML5", "CSS3"],
+      github: "https://github.com/JyotikaUppar/projects/tree/main/bmi%20calculator",
+      demo: "https://jyotikauppar.github.io/projects/bmi-calculator",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+      featured: true
     },
     {
-      title: "Task Management System",
-      role: "Frontend Developer",
-      description: "Collaborative task management platform with real-time updates, drag-and-drop functionality, and team collaboration features. Clean, intuitive interface design.",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Firebase", "Socket.io"],
-      github: "https://github.com/Rakshita123136/task-manager",
-      demo: "https://task-manager-demo.netlify.app",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
+      title: "Advanced Todo System",
+      problem: "Static lists often fail to help users prioritize and manage daily productivity effectively.",
+      solution: "Created a persistent task management tool with categories, deadlines, and local storage integration.",
+      tech: ["JavaScript", "HTML5", "CSS3", "Local Storage"],
+      github: "https://github.com/JyotikaUppar/projects/tree/main/todo",
+      demo: "https://jyotikauppar.github.io/projects/todo",
+      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Weather Dashboard",
-      role: "Frontend Developer",
-      description: "Interactive weather application with location-based forecasts, weather maps, and historical data visualization. Responsive design with dark/light themes.",
-      tech: ["JavaScript", "HTML5", "CSS3", "Weather API", "Chart.js"],
-      github: "https://github.com/Rakshita123136/weather-dashboard",
-      demo: "https://weather-dashboard-demo.github.io",
-      image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800"
-    },
-    {
-      title: "Recipe Finder App",
-      role: "Full-Stack Developer",
-      description: "Recipe discovery platform with search functionality, meal planning, and nutrition tracking. Users can save favorites and create custom recipe collections.",
-      tech: ["Vue.js", "Python", "Django", "PostgreSQL", "Recipe API"],
-      github: "https://github.com/Rakshita123136/recipe-finder",
-      demo: "https://recipe-finder-demo.herokuapp.com",
-      image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
+      title: "Weather Pulse",
+      problem: "Weather apps often bury important atmospheric data under simple temperature readings.",
+      solution: "Created a data-driven dashboard that visualizes wind patterns and humidity using OpenWeather API.",
+      tech: ["JavaScript", "HTML5", "CSS3", "Weather API"],
+      github: "https://github.com/JyotikaUppar/projects/tree/main/weather",
+      demo: "https://jyotikauppar.github.io/projects/weather",
+      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
   return (
-    <section id="projects" className="py-20 bg-slate-50">
+    <section id="projects" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-            My Projects
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-emerald-500 mx-auto mb-8"></div>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Here are some of the projects I've worked on, showcasing my skills in full-stack development and passion for creating meaningful applications.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Selected <span className="text-gradient">Projects</span>
+            </h2>
+            <p className="text-lg text-slate-400">
+              A curated collection of my work focusing on performance, UX, and solving real-world challenges.
+            </p>
+          </div>
+          <div className="hidden md:block">
+            <div className="flex items-center space-x-2 text-slate-500 text-sm font-medium tracking-widest uppercase">
+              <Layers size={16} />
+              <span>Scroll to explore</span>
+            </div>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="space-y-24">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
+              className={`group relative flex flex-col ${
+                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              } gap-12 items-center`}
             >
-              <div className="relative overflow-hidden">
+              {/* Image Column */}
+              <div className="w-full md:w-1/2 overflow-hidden rounded-2xl glass-card border border-white/10 group-hover:border-white/20 transition-all duration-500 shadow-2xl relative aspect-[16/10]">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale-[0.2] group-hover:grayscale-0"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-60"></div>
+                {project.featured && (
+                  <div className="absolute top-6 left-6 px-4 py-1.5 glass-card rounded-full flex items-center space-x-2 border border-white/20">
+                    <Sparkles size={16} className="text-yellow-400 fill-yellow-400" />
+                    <span className="text-xs font-bold text-white tracking-widest uppercase">Featured Work</span>
+                  </div>
+                )}
               </div>
-              
-              <div className="p-8">
-                <div className="flex items-start justify-between mb-4">
+
+              {/* Content Column */}
+              <div className="w-full md:w-1/2 project-content">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 group-hover:text-gradient transition-all duration-300">
+                  {project.title}
+                </h3>
+                
+                <div className="space-y-6 mb-8">
                   <div>
-                    <h3 className="text-xl font-bold text-slate-800 mb-2">
-                      {project.title}
-                    </h3>
-                    <span className="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
-                      <Code size={16} className="mr-1" />
-                      {project.role}
+                    <h4 className="text-xs font-bold text-blue-400 uppercase tracking-[0.2em] mb-2">The Problem</h4>
+                    <p className="text-slate-300 leading-relaxed italic border-l-2 border-blue-500/50 pl-4">
+                      "{project.problem}"
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-xs font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">The Solution</h4>
+                    <p className="text-slate-300 leading-relaxed">
+                      {project.solution}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap gap-2 mb-10">
+                  {project.tech.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-full"
+                    >
+                      {tech}
                     </span>
-                  </div>
+                  ))}
                 </div>
                 
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-lg"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-4 py-2 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors duration-200"
-                  >
-                    <Github size={18} />
-                    <span>Code</span>
-                  </a>
+                <div className="flex items-center gap-6">
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                    className="flex items-center space-x-2 text-white font-semibold hover:text-blue-400 transition-colors group/btn"
                   >
-                    <ExternalLink size={18} />
-                    <span>Demo</span>
+                    <span>Visit Live Demo</span>
+                    <ExternalLink size={18} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-slate-400 font-semibold hover:text-white transition-colors"
+                  >
+                    <Github size={20} />
+                    <span>View Repository</span>
                   </a>
                 </div>
               </div>

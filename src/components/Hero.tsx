@@ -1,78 +1,71 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
+import { Github, ExternalLink, ArrowRight } from 'lucide-react';
 
 const Hero = () => {
-  const scrollToAbout = () => {
-    const element = document.getElementById('about');
+  const scrollToProjects = () => {
+    const element = document.getElementById('projects');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center relative pt-20">
-      <div className="container mx-auto px-6 text-center">
-        <div className="mb-8">
-          <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-full mx-auto mb-6 flex items-center justify-center shadow-2xl">
-            <span className="text-4xl font-bold text-white">JU</span>
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      {/* Background Blobs for specific section glow */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[128px] -z-10"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[128px] -z-10"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="inline-flex items-center px-4 py-2 rounded-full glass-card border border-white/10 mb-8 animate-fade-in">
+            <span className="w-2 h-2 bg-green-500 rounded-full mr-3 animate-pulse"></span>
+            <span className="text-sm font-medium text-slate-300 tracking-wide uppercase">Open to Opportunities</span>
           </div>
-        </div>
-        
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Jyotika</span>
+
+          <h1 className="text-6xl md:text-8xl font-extrabold text-white mb-8 tracking-tight leading-[1.1]">
+            I build <span className="text-gradient">scalable web apps</span> <br className="hidden md:block" />
+            and AI-powered tools.
           </h1>
-          
-          <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
-            A passionate software developer excited to solve real-world problems through innovative technology
+
+          <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+             IT Student focused on <span className="text-white">real-world problem solving</span> and modern web technologies.
           </p>
-          
-          <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
-            Fresh graduate with a strong foundation in full-stack development, eager to contribute to meaningful projects and grow with an amazing team.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
             <button
-              onClick={scrollToAbout}
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+              onClick={scrollToProjects}
+              className="btn-primary group"
             >
-              Get to Know Me
+              <span className="flex items-center">
+                View Projects
+                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </span>
             </button>
             
-            <div className="flex items-center space-x-4">
-              <a
-                href="https://github.com/Rakshita123136"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-slate-800 text-slate-300 rounded-lg hover:bg-slate-700 hover:text-white transition-all duration-200 transform hover:scale-110"
-              >
-                <Github size={24} />
-              </a>
-              <a
-                href="https://linkedin.com/in/jyotika-uppar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-slate-800 text-slate-300 rounded-lg hover:bg-slate-700 hover:text-blue-400 transition-all duration-200 transform hover:scale-110"
-              >
-                <Linkedin size={24} />
-              </a>
-              <a
-                href="mailto:jayauppar2@gmail.com"
-                className="p-3 bg-slate-800 text-slate-300 rounded-lg hover:bg-slate-700 hover:text-emerald-400 transition-all duration-200 transform hover:scale-110"
-              >
-                <Mail size={24} />
-              </a>
-            </div>
+            <a
+              href="https://github.com/JyotikaUppar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary group"
+            >
+              <span className="flex items-center">
+                <Github size={20} className="mr-2" />
+                GitHub Profile
+                <ExternalLink size={18} className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-slate-400 group-hover:text-white" />
+              </span>
+            </a>
           </div>
         </div>
       </div>
-      
-      <button
-        onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-slate-400 hover:text-white transition-colors duration-200 animate-bounce"
+
+      <div 
+        className="absolute bottom-6 inset-x-0 flex justify-center z-20 animate-bounce cursor-pointer opacity-50 hover:opacity-100 transition-opacity" 
+        onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})}
       >
-        <ArrowDown size={32} />
-      </button>
+        <div className="w-6 h-10 border-2 border-slate-500 rounded-full flex justify-center">
+          <div className="w-1 h-2 bg-slate-500 rounded-full mt-2"></div>
+        </div>
+      </div>
     </section>
   );
 };
