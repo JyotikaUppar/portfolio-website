@@ -1,94 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg-color: #0A0A0A;
-  --accent-blue: #3b82f6;
-  --accent-purple: #9333ea;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --bg-base:      #060c1a;
+  --bg-card:      #0b1224;
+  --bg-card-alt:  #0f172a;
+  --text-primary: #f0f4ff;
+  --text-secondary: #7e8fb5;
+  --text-muted:   #3a4a6b;
+  --border-subtle: rgba(120, 160, 255, 0.06);
+  --border-medium: rgba(120, 160, 255, 0.12);
+  --accent-blue:  #4f7fff;
+  --accent-glow:  rgba(79, 127, 255, 0.15);
 }
 
 @layer base {
   body {
-    @apply bg-[#0A0A0A] text-slate-200 antialiased selection:bg-purple-500/30;
-    font-family: 'Inter', sans-serif;
+    @apply bg-[#060c1a] text-[#dce4f5] antialiased selection:bg-white/10 selection:text-white overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.04em;
+    @apply font-semibold;
   }
 }
 
 @layer components {
+  /* Midnight Navy Glass Card */
   .glass-card {
-    @apply bg-white/[0.03] backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+    @apply bg-[#0b1224]/70 backdrop-blur-xl border border-[rgba(120,160,255,0.07)];
   }
   
   .glass-card-hover {
-    @apply hover:bg-white/[0.05] hover:border-white/20 transition-all duration-300;
+    @apply transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+           hover:bg-[#0f1a30]/90 hover:border-[rgba(120,160,255,0.15)];
   }
   
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500;
-  }
-  
-  .btn-primary {
-    @apply relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] active:scale-95;
-  }
-  
-  .btn-secondary {
-    @apply glass-card px-8 py-3 rounded-full font-semibold text-white border border-white/10 hover:border-white/20 transition-all duration-300 active:scale-95;
+  /* Gradient text – crisp white to navy tint */
+  .text-gradient-chrome {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-[#7ea8ff]/40;
   }
 
-  .footer-bg {
-    @apply bg-[#050505];
+  .text-gradient-subtle {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-[#7ea8ff]/30;
+  }
+  
+  /* Premium Buttons */
+  .btn-premium {
+    @apply relative overflow-hidden bg-white text-[#060c1a] px-8 py-4 rounded-full font-semibold
+           transition-all duration-500 hover:bg-[#e8eeff] active:scale-[0.97];
+  }
+  
+  .btn-premium-secondary {
+    @apply relative overflow-hidden bg-[#0b1224] border border-[rgba(120,160,255,0.12)] text-white
+           px-8 py-4 rounded-full font-medium transition-all duration-500
+           hover:bg-[#111f3a] hover:border-[rgba(120,160,255,0.25)] active:scale-[0.97];
+  }
+
+  /* Micro grid canvas — navy tint lines */
+  .bg-grid-canvas {
+    background-size: 44px 44px;
+    background-image:
+      linear-gradient(to right,  rgba(120,160,255,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(120,160,255,0.04) 1px, transparent 1px);
   }
 }
 
-/* Custom Cursor Glow */
-.cursor-glow {
+/* Custom thin scrollbar in navy tones */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #060c1a; }
+::-webkit-scrollbar-thumb { background: #1a2645; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #253361; }
+
+/* Soft navy-blue cursor glow */
+.cursor-glow-spring {
   pointer-events: none;
   position: fixed;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 70%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(79,127,255,0.07) 0%, transparent 65%);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
-  transition: opacity 0.3s ease;
 }
 
-/* Section Transitions */
-.reveal {
+/* Marquee animation */
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee         { animation: marquee 28s linear infinite; }
+.animate-marquee-reverse { animation: marquee 28s linear infinite reverse; }
+
+/* Blur-reveal preloader */
+@keyframes blurRevealAnim {
+  to { filter: blur(0); opacity: 1; }
+}
+.blur-reveal {
+  filter: blur(10px);
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
+  animation: blurRevealAnim 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0A0A0A;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #222;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #333;
-}
-

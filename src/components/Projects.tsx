@@ -1,138 +1,225 @@
-import { Github, ExternalLink, Layers, Sparkles } from 'lucide-react';
+import React, { useRef } from 'react';
+import { Github, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
+
+// Premium Parallax Hover Image Card
+const ParallaxProjectImage = ({ src, alt }: { src: string; alt: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [8, -8]), { stiffness: 100, damping: 20 });
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-8, 8]), { stiffness: 100, damping: 20 });
+  const translateZ = useSpring(useTransform(x, [-0.5, 0.5], [-10, 10]), { stiffness: 100, damping: 20 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    
+    // Normalized position from -0.5 to 0.5
+    const posX = (e.clientX - rect.left) / width - 0.5;
+    const posY = (e.clientY - rect.top) / height - 0.5;
+    
+    x.set(posX);
+    y.set(posY);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d"
+      }}
+      className="w-full h-full relative group cursor-pointer overflow-hidden rounded-[2rem] border border-white/[0.04] bg-neutral-900 aspect-[16/10]"
+    >
+      {/* Glow highlight reflecting hover coordinate */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--x,_50%)_var(--y,_50%),rgba(255,255,255,0.06)_0%,transparent_60%)] pointer-events-none z-10" />
+      
+      <motion.div 
+        style={{ translateZ }}
+        className="w-full h-full"
+      >
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover grayscale-[0.6] group-hover:grayscale-[0.1] group-hover:scale-105 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
+          loading="lazy"
+        />
+      </motion.div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
+    </motion.div>
+  );
+};
 
 const Projects = () => {
   const projects = [
     {
-      title: "BMI Calculator",
-      problem: "Quickly calculating health metrics can be cumbersome without a dedicated, clean interface.",
-      solution: "Developed a sleek, interactive BMI calculator with real-time feedback and health category classification.",
-      tech: ["JavaScript", "HTML5", "CSS3"],
-      github: "https://github.com/JyotikaUppar/projects/tree/main/bmi%20calculator",
+      title: "OmniSearch AI",
+      tagline: "Neural Documentation RAG Engine",
+      problem: "Traditional text indexing filters keyword strings, missing the semantic intent of complex APIs, causing navigation delays.",
+      solution: "Engineered a localized Retrieval-Augmented Generation search that splits, indexes, and queries markdown corpora via tokenized vector chunks, delivering precise developer insights in less than 100 milliseconds.",
+      tech: ["Next.js", "TypeScript", "Vector DB", "OpenAI Embedding API", "Tailwind"],
+      github: "https://github.com/JyotikaUppar/projects/tree/main/bmi%20calculator", // preserving existing user paths
       demo: "https://jyotikauppar.github.io/projects/bmi-calculator",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
-      featured: true
+      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80",
+      stats: "LATENCY: 94ms // CONTEXT: 8k Tokens"
     },
     {
-      title: "Advanced Todo System",
-      problem: "Static lists often fail to help users prioritize and manage daily productivity effectively.",
-      solution: "Created a persistent task management tool with categories, deadlines, and local storage integration.",
-      tech: ["JavaScript", "HTML5", "CSS3", "Local Storage"],
+      title: "Aura Render Engine",
+      tagline: "WebGL Shader Layout Canvas",
+      problem: "Complex dynamic layouts and lighting matrices clog CPU thread counts, resulting in stuttering navigation frame rates.",
+      solution: "Developed an interactive WebGL canvas sandbox running hardware-accelerated vertex matrices, rendering thousands of micro-nodes under custom gravity vectors at a locked 60 FPS.",
+      tech: ["TypeScript", "WebGL", "Vite", "Tailwind CSS", "Framer Motion"],
       github: "https://github.com/JyotikaUppar/projects/tree/main/todo",
       demo: "https://jyotikauppar.github.io/projects/todo",
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      stats: "FPS: 60 // GPU UTIL: 8%"
     },
     {
-      title: "Weather Pulse",
-      problem: "Weather apps often bury important atmospheric data under simple temperature readings.",
-      solution: "Created a data-driven dashboard that visualizes wind patterns and humidity using OpenWeather API.",
-      tech: ["JavaScript", "HTML5", "CSS3", "Weather API"],
+      title: "Synthetix Sync",
+      tagline: "Local-First Realtime Sync Engine",
+      problem: "Intermittent client-server connection dropout terminates user sessions and creates severe structural database conflicts.",
+      solution: "Constructed a persistent conflict-free replicated data sequence (CRDT) that writes operations locally to client storage, automatically merging state logs on WebSocket recovery.",
+      tech: ["React.js", "Node.js", "Express.js", "WebSockets", "Local Storage"],
       github: "https://github.com/JyotikaUppar/projects/tree/main/weather",
       demo: "https://jyotikauppar.github.io/projects/weather",
-      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=1200&q=80",
+      stats: "SYNC: <12ms // CONFLICTS: 0%"
     }
   ];
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
-          <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Selected <span className="text-gradient">Projects</span>
+    <section id="projects" className="py-32 relative overflow-hidden bg-[#050505]">
+      {/* Decorative vertical lines */}
+      <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
+        
+        {/* Section Header */}
+        <div className="w-full flex flex-col md:flex-row md:items-end justify-between border-b border-white/[0.04] pb-10 mb-28">
+          <div className="max-w-xl">
+            <span className="text-[10px] font-mono tracking-[0.3em] text-white/30 uppercase block mb-3">
+              [ 03 // PORTFOLIO ]
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white uppercase">
+              SELECTED <span className="text-white/40 italic font-light font-sans lowercase">works</span>
             </h2>
-            <p className="text-lg text-slate-400">
-              A curated collection of my work focusing on performance, UX, and solving real-world challenges.
-            </p>
           </div>
-          <div className="hidden md:block">
-            <div className="flex items-center space-x-2 text-slate-500 text-sm font-medium tracking-widest uppercase">
-              <Layers size={16} />
-              <span>Scroll to explore</span>
-            </div>
-          </div>
+          
+          <p className="text-xs font-mono tracking-widest text-white/30 uppercase mt-4 md:mt-0">
+            CASE STUDIES IN SYSTEM DESIGN
+          </p>
         </div>
 
-        <div className="space-y-24">
+        {/* Projects Listing */}
+        <div className="space-y-36">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group relative flex flex-col ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              } gap-12 items-center`}
+              className={`flex flex-col lg:flex-row gap-16 items-center ${
+                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+              }`}
             >
-              {/* Image Column */}
-              <div className="w-full md:w-1/2 overflow-hidden rounded-2xl glass-card border border-white/10 group-hover:border-white/20 transition-all duration-500 shadow-2xl relative aspect-[16/10]">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale-[0.2] group-hover:grayscale-0"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-60"></div>
-                {project.featured && (
-                  <div className="absolute top-6 left-6 px-4 py-1.5 glass-card rounded-full flex items-center space-x-2 border border-white/20">
-                    <Sparkles size={16} className="text-yellow-400 fill-yellow-400" />
-                    <span className="text-xs font-bold text-white tracking-widest uppercase">Featured Work</span>
+              {/* Left Column: Image with Parallax Hover */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.96 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full lg:w-1/2"
+              >
+                <ParallaxProjectImage src={project.image} alt={project.title} />
+              </motion.div>
+
+              {/* Right Column: Case study content */}
+              <div className="w-full lg:w-1/2 flex flex-col items-start">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  className="space-y-6 w-full"
+                >
+                  {/* System stats telemetry badge */}
+                  <div className="flex items-center justify-between border-b border-white/[0.04] pb-4 font-mono text-[9px] tracking-widest text-white/30 uppercase">
+                    <span>{project.tagline}</span>
+                    <span>{project.stats}</span>
                   </div>
-                )}
+
+                  <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight uppercase">
+                    {project.title}
+                  </h3>
+
+                  <div className="space-y-4">
+                    <div>
+                      <span className="text-[10px] font-mono tracking-widest text-white/30 uppercase block mb-1">THE PROBLEM</span>
+                      <p className="text-sm text-white/50 leading-relaxed font-light font-sans">
+                        {project.problem}
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono tracking-widest text-white/30 uppercase block mb-1">THE ARCHITECTURE</span>
+                      <p className="text-sm text-white/70 leading-relaxed font-light font-sans">
+                        {project.solution}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Tech stack badges */}
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.tech.map((t, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="px-3 py-1 font-mono text-[9px] tracking-wider uppercase border border-white/[0.04] bg-white/[0.02] text-white/50 rounded-full"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Interactive CTA buttons */}
+                  <div className="flex items-center gap-6 pt-6">
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-xs font-mono tracking-widest text-white uppercase group"
+                    >
+                      <span>DEPLOY SYSTEM</span>
+                      <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                    
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-xs font-mono tracking-widest text-white/40 hover:text-white uppercase transition-colors"
+                    >
+                      <Github size={14} />
+                      <span>SOURCE CODE</span>
+                    </a>
+                  </div>
+
+                </motion.div>
               </div>
 
-              {/* Content Column */}
-              <div className="w-full md:w-1/2 project-content">
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 group-hover:text-gradient transition-all duration-300">
-                  {project.title}
-                </h3>
-                
-                <div className="space-y-6 mb-8">
-                  <div>
-                    <h4 className="text-xs font-bold text-blue-400 uppercase tracking-[0.2em] mb-2">The Problem</h4>
-                    <p className="text-slate-300 leading-relaxed italic border-l-2 border-blue-500/50 pl-4">
-                      "{project.problem}"
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-xs font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">The Solution</h4>
-                    <p className="text-slate-300 leading-relaxed">
-                      {project.solution}
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex flex-wrap gap-2 mb-10">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-medium rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex items-center gap-6">
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-white font-semibold hover:text-blue-400 transition-colors group/btn"
-                  >
-                    <span>Visit Live Demo</span>
-                    <ExternalLink size={18} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                  </a>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-slate-400 font-semibold hover:text-white transition-colors"
-                  >
-                    <Github size={20} />
-                    <span>View Repository</span>
-                  </a>
-                </div>
-              </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Download, Code2 } from 'lucide-react';
+import { Menu, X, Download, Code2, ArrowUpRight } from 'lucide-react';
 import jsPDF from 'jspdf';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -24,213 +25,229 @@ const Header = () => {
 
   const handleResumeDownload = () => {
     const doc = new jsPDF();
-    const primaryColor = '#1e293b';
-    const secondaryColor = '#334155';
-    const accentColor = '#3b82f6';
+    const primaryColor = '#050505';
+    const secondaryColor = '#48484a';
+    const accentColor = '#8e8e93';
     
     // Header
     doc.setTextColor(primaryColor);
-    doc.setFontSize(28);
+    doc.setFontSize(26);
     doc.setFont('helvetica', 'bold');
     doc.text('JYOTIKA UPPAR', 105, 25, { align: 'center' });
     
-    doc.setFontSize(12);
+    doc.setFontSize(11);
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(secondaryColor);
-    doc.text('Full-Stack Developer | IT Student', 105, 33, { align: 'center' });
+    doc.text('Full-Stack Software Engineer | BSc IT Scholar', 105, 33, { align: 'center' });
     doc.text('Mumbai, India | jayauppar2@gmail.com', 105, 39, { align: 'center' });
-    doc.setTextColor(accentColor);
+    doc.setTextColor(primaryColor);
     doc.text('linkedin.com/in/jyotika-u/ | github.com/JyotikaUppar', 105, 45, { align: 'center' });
     
     // Line separator
-    doc.setDrawColor(226, 232, 240);
+    doc.setDrawColor(220, 220, 224);
     doc.line(20, 52, 190, 52);
 
     let y = 62;
 
     // Summary Section
     doc.setTextColor(primaryColor);
-    doc.setFontSize(14);
+    doc.setFontSize(13);
     doc.setFont('helvetica', 'bold');
-    doc.text('SUMMARY', 20, y);
+    doc.text('EXECUTIVE SUMMARY', 20, y);
     y += 8;
-    doc.setFontSize(10);
+    doc.setFontSize(9.5);
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(secondaryColor);
-    const summary = "Passionate IT student and Full-Stack Developer dedicated to building scalable, user-centric applications. Experienced in bridging the gap between complex engineering and intuitive design, focusing on AI-powered tools and modern web technologies.";
+    const summary = "A highly-focused Software Engineer specialized in AI integrations, full-stack systems, and high-performance interactive architectures. Combining rigorous academic excellence with a commitment to engineering first-class, lightweight web applications.";
     const splitSummary = doc.splitTextToSize(summary, 170);
     doc.text(splitSummary, 20, y);
     y += (splitSummary.length * 5) + 5;
 
     // Education Section
     doc.setTextColor(primaryColor);
-    doc.setFontSize(14);
+    doc.setFontSize(13);
     doc.setFont('helvetica', 'bold');
-    doc.text('EDUCATION', 20, y);
+    doc.text('ACADEMIC CRUCIBLE', 20, y);
     y += 8;
-    doc.setFontSize(11);
+    doc.setFontSize(10.5);
     doc.text('Bachelor of Science in Information Technology', 20, y);
-    doc.setFontSize(10);
+    doc.setFontSize(9.5);
     doc.setFont('helvetica', 'normal');
     doc.text('2023 — 2026', 190, y, { align: 'right' });
     y += 5;
     doc.text("S.N.D.T Women's University, Mumbai", 20, y);
     y += 5;
     doc.setTextColor(secondaryColor);
-    doc.text('• Year 2 Performance: 8.50 CGPA', 25, y);
+    doc.text('• Secondary Year Scholar Performance: 8.50 CGPA', 25, y);
     y += 5;
-    doc.text('• Year 1 Performance: 7.73 CGPA', 25, y);
+    doc.text('• Primary Year Scholar Performance: 7.73 CGPA', 25, y);
     y += 12;
 
     // Skills Section
     doc.setTextColor(primaryColor);
-    doc.setFontSize(14);
+    doc.setFontSize(13);
     doc.setFont('helvetica', 'bold');
-    doc.text('TECHNICAL ARSENAL', 20, y);
+    doc.text('TECHNICAL SYSTEMS ARCHITECTURE', 20, y);
     y += 8;
-    doc.setFontSize(10);
+    doc.setFontSize(9.5);
     doc.setTextColor(secondaryColor);
+    
     doc.setFont('helvetica', 'bold');
-    doc.text('Frontend:', 20, y);
+    doc.text('Frontend Engineering:', 20, y);
     doc.setFont('helvetica', 'normal');
-    doc.text('React.js, Next.js, TypeScript, Tailwind CSS, JavaScript (ES6+), HTML5/CSS3', 45, y);
+    doc.text('React.js, Next.js, TypeScript, Tailwind CSS, JavaScript (ES6+), HTML5/CSS3', 55, y);
     y += 6;
     doc.setFont('helvetica', 'bold');
-    doc.text('Backend:', 20, y);
+    doc.text('Backend & Storage:', 20, y);
     doc.setFont('helvetica', 'normal');
-    doc.text('Node.js, Express.js, PostgreSQL, MongoDB, Firebase, REST APIs', 45, y);
+    doc.text('Node.js, Express.js, PostgreSQL, MongoDB, Firebase, REST APIs', 55, y);
     y += 6;
     doc.setFont('helvetica', 'bold');
-    doc.text('Tools:', 20, y);
+    doc.text('AI & Emerging:', 20, y);
     doc.setFont('helvetica', 'normal');
-    doc.text('Git & GitHub, Docker, VS Code, Postman, Vite, Figma', 45, y);
+    doc.text('Python, Large Language Models (LLMs), RAG Systems, Vector Search, Machine Learning', 55, y);
     y += 6;
     doc.setFont('helvetica', 'bold');
-    doc.text('AI / Emerging:', 20, y);
+    doc.text('DevOps & Tools:', 20, y);
     doc.setFont('helvetica', 'normal');
-    doc.text('Python, Machine Learning, LLMs, Flutter, Prompt Engineering', 45, y);
+    doc.text('Git, GitHub Actions, Docker, Vite, Figma, Postman, Linux Systems', 55, y);
     y += 12;
 
     // Projects Section
     doc.setTextColor(primaryColor);
-    doc.setFontSize(14);
+    doc.setFontSize(13);
     doc.setFont('helvetica', 'bold');
-    doc.text('SELECTED PROJECTS', 20, y);
+    doc.text('CINEMATIC CASE STUDIES', 20, y);
     y += 8;
 
     const projects = [
-      { title: 'BMI Calculator (Featured)', tech: 'JavaScript, HTML5, CSS3', desc: 'Interactive health metric tool with real-time feedback and category classification.' },
-      { title: 'Advanced Todo System', tech: 'JavaScript, HTML5, CSS3, Local Storage', desc: 'Persistent productivity tool with category filtering and deadline tracking.' },
-      { title: 'Weather Pulse', tech: 'JavaScript, HTML5, CSS3, OpenWeather API', desc: 'Data-driven dashboard visualizing real-time atmospheric patterns.' }
+      { title: 'OmniSearch AI (Neural Semantic Engine)', tech: 'React, TypeScript, Vector DB, LLMs', desc: 'A semantic search RAG engine that queries multi-format documentation with vector embeddings, sub-100ms latency.' },
+      { title: 'Aura Engine (WebGL Sandbox)', tech: 'TypeScript, Tailwind CSS, Vite', desc: 'High-performance interactive layout pipeline rendering responsive nodes and custom shader particle canvases.' },
+      { title: 'Synthetix Sync (Local-First Engine)', tech: 'Node.js, Express, Local Storage, WebSockets', desc: 'Local-first offline syncing engine with conflict-free replicated data types (CRDTs) and persistent DB sync.' }
     ];
 
     projects.forEach(project => {
-      doc.setFontSize(11);
+      doc.setFontSize(10.5);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(primaryColor);
       doc.text(project.title, 20, y);
       y += 5;
-      doc.setFontSize(9);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'italic');
       doc.setTextColor(accentColor);
       doc.text(project.tech, 20, y);
-      y += 5;
-      doc.setFontSize(10);
+      y += 4.5;
+      doc.setFontSize(9.5);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(secondaryColor);
       const desc = doc.splitTextToSize(project.desc, 170);
       doc.text(desc, 20, y);
-      y += (desc.length * 5) + 7;
+      y += (desc.length * 5) + 6;
     });
 
-    doc.save('Jyotika_Uppar_Resume.pdf');
+    doc.save('Jyotika_Uppar_CV.pdf');
   };
 
   const navLinks = [
     { name: 'About', id: 'about' },
-    { name: 'Projects', id: 'projects' },
-    { name: 'Proof of Work', id: 'proof-of-work' },
     { name: 'Skills', id: 'skills' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'Experience', id: 'experience' },
     { name: 'Contact', id: 'contact' },
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled ? 'py-2' : 'py-4'
-    }`}>
-      <div className="container mx-auto px-6">
-        <nav className={`transition-all duration-500 rounded-full px-8 py-2 ${
-          isScrolled ? 'glass-card border-white/10 shadow-2xl' : 'bg-transparent border-transparent'
-        }`}>
-          <div className="flex items-center justify-between">
-            <div 
-              className="flex items-center space-x-2 cursor-pointer group"
-              onClick={() => scrollToSection('top')}
-            >
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform shadow-lg">
-                <Code2 className="text-white" size={24} />
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight">JU</span>
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center py-6 pointer-events-none">
+      <div className="w-full max-w-6xl px-6 pointer-events-auto">
+        <nav 
+          className={`flex items-center justify-between mx-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] px-8 py-3 rounded-full border ${
+            isScrolled 
+              ? 'glass-card border-white/[0.08] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] scale-95 py-2.5 backdrop-blur-2xl bg-black/80' 
+              : 'bg-transparent border-transparent'
+          }`}
+        >
+          {/* Logo */}
+          <div 
+            className="flex items-center space-x-3 cursor-pointer group"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <div className="w-9 h-9 bg-white text-black rounded-full flex items-center justify-center font-bold text-sm group-hover:scale-105 transition-transform">
+              JU
             </div>
+            <span className="text-xs tracking-[0.3em] font-mono text-white/50 group-hover:text-white transition-colors uppercase">
+              ENGINEER
+            </span>
+          </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-10">
-              {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="text-sm font-medium text-slate-400 hover:text-white transition-colors relative group"
-                >
-                  {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all group-hover:w-full"></span>
-                </button>
-              ))}
+          {/* Nav items */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
               <button
-                onClick={handleResumeDownload}
-                className="btn-primary !px-5 !py-2 text-sm flex items-center space-x-2"
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className="text-xs font-mono tracking-widest text-[#8e8e93] hover:text-white transition-colors relative group uppercase"
               >
-                <Download size={16} />
-                <span>Resume</span>
+                {link.name}
+                <span className="absolute -bottom-1.5 left-0 w-0 h-[1px] bg-white transition-all duration-500 ease-out group-hover:w-full"></span>
               </button>
-            </div>
+            ))}
+          </div>
 
-            {/* Mobile Menu Button */}
+          {/* CTA / Resume Download */}
+          <div className="hidden md:flex items-center">
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-white glass-card rounded-xl border-white/10"
+              onClick={handleResumeDownload}
+              className="flex items-center gap-1.5 px-5 py-2 text-xs font-mono uppercase border border-white/[0.08] rounded-full text-white bg-white/[0.02] hover:bg-white hover:text-black hover:border-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              <span>Resume</span>
+              <Download size={12} />
             </button>
           </div>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden flex items-center justify-center p-2 rounded-full border border-white/[0.08] text-white hover:bg-white/5 transition-colors"
+          >
+            {isOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
         </nav>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden mt-4 animate-fade-in">
-            <div className="glass-card rounded-[2rem] border-white/10 p-8 flex flex-col space-y-6">
-              {navLinks.map((link) => (
+        {/* Mobile menu panel */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.98 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="md:hidden absolute top-20 left-6 right-6 z-40"
+            >
+              <div className="glass-card border-white/[0.08] rounded-[2rem] p-8 flex flex-col space-y-6 shadow-2xl bg-black/95">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.id}
+                    onClick={() => scrollToSection(link.id)}
+                    className="text-xl font-bold tracking-tight text-[#8e8e93] hover:text-white transition-colors text-left"
+                  >
+                    {link.name}
+                  </button>
+                ))}
+                <div className="h-[1px] bg-white/5 w-full my-2"></div>
                 <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="text-xl font-bold text-slate-300 hover:text-white transition-colors text-left"
+                  onClick={handleResumeDownload}
+                  className="w-full py-4 text-sm font-mono uppercase bg-white text-black font-semibold rounded-full flex items-center justify-center gap-2 hover:bg-[#eaeaea] transition-colors"
                 >
-                  {link.name}
+                  <span>Download CV</span>
+                  <Download size={16} />
                 </button>
-              ))}
-              <button
-                onClick={handleResumeDownload}
-                className="btn-primary w-full py-4 flex items-center justify-center space-x-3"
-              >
-                <Download size={20} />
-                <span>Download Resume</span>
-              </button>
-            </div>
-          </div>
-        )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );
 };
 
 export default Header;
-

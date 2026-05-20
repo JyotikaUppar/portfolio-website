@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Github, Linkedin, Send, CheckCircle, ExternalLink, Briefcase } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, CheckCircle, Phone, ArrowUpRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,9 +9,11 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSending(true);
     
     try {
       const response = await fetch('http://localhost:5000/api/contact', {
@@ -26,14 +29,16 @@ const Contact = () => {
         setFormData({ name: '', email: '', message: '' });
         setTimeout(() => {
           setIsSubmitted(false);
-        }, 3000);
+        }, 5000);
       } else {
         const data = await response.json();
-        alert(data.error || 'Failed to send message');
+        alert(data.error || 'Failed to send transmission');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Something went wrong. Please try again later.');
+      alert('Network transmission failed. Please retry.');
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -44,140 +49,169 @@ const Contact = () => {
     });
   };
 
+  const socialChannels = [
+    { name: 'Phone', url: 'tel:+919324781880', icon: <Phone size={14} />, desc: '+91 93247 81880' },
+    { name: 'Github', url: 'https://github.com/JyotikaUppar', icon: <Github size={14} />, desc: '@JyotikaUppar' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jyotika-u/', icon: <Linkedin size={14} />, desc: 'jyotika-u' },
+    { name: 'Email', url: 'mailto:jayauppar2@gmail.com', icon: <Mail size={14} />, desc: 'jayauppar2@gmail.com' }
+  ];
+
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-                Let's <span className="text-gradient">Connect</span>
-              </h2>
-              
-              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 mb-8">
-                <Briefcase size={18} />
-                <span className="text-sm font-semibold uppercase tracking-wider">Open to internships and opportunities</span>
-              </div>
+    <section id="contact" className="py-32 relative overflow-hidden bg-[#050505]">
+      {/* Decorative vertical grid lines */}
+      <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
 
-              <p className="text-lg text-slate-400 mb-12 leading-relaxed">
-                Whether you have a specific project in mind or just want to say hi, I'm always open to discussing new ideas and collaborations.
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
+        
+        {/* Section Header */}
+        <div className="w-full flex flex-col md:flex-row md:items-end justify-between border-b border-white/[0.04] pb-10 mb-24">
+          <div className="max-w-xl">
+            <span className="text-[10px] font-mono tracking-[0.3em] text-white/30 uppercase block mb-3">
+              [ 05 // TRANSMISSION ]
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white uppercase">
+              LET'S <span className="text-white/40 italic font-light font-sans lowercase">connect</span>
+            </h2>
+          </div>
+          
+          <p className="text-xs font-mono tracking-widest text-white/30 uppercase mt-4 md:mt-0">
+            SECURE PORT OVER HTTPS / SOCKETS
+          </p>
+        </div>
+
+        {/* Editorial Split Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          
+          {/* Left Column: Core Message & Luxury Social Links */}
+          <div className="lg:col-span-5 space-y-12">
+            <div className="space-y-6">
+              <h3 className="text-2xl md:text-3xl text-white font-bold tracking-tight uppercase">
+                Initiate a project, inquire about credentials, or schedule a call.
+              </h3>
+              <p className="text-sm text-white/50 leading-relaxed font-light font-sans max-w-md">
+                Always open to collaborative internships, open-source challenges, and modular full-stack product building. Let's engineering something immersive.
               </p>
-
-              <div className="space-y-6 mb-12">
-                <a 
-                  href="mailto:jayauppar2@gmail.com" 
-                  className="flex items-center space-x-6 p-6 glass-card rounded-2xl border border-white/5 hover:border-blue-500/30 transition-all group"
-                >
-                  <div className="p-4 bg-blue-500/10 rounded-xl text-blue-400 group-hover:scale-110 transition-transform">
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <div className="text-sm text-slate-500 uppercase tracking-widest font-bold mb-1">Email Me</div>
-                    <div className="text-white font-medium">jayauppar2@gmail.com</div>
-                  </div>
-                </a>
-
-                <div className="grid grid-cols-2 gap-6">
-                  <a 
-                    href="https://github.com/JyotikaUppar" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex flex-col p-6 glass-card rounded-2xl border border-white/5 hover:border-purple-500/30 transition-all group"
-                  >
-                    <Github className="text-slate-400 group-hover:text-white mb-4 transition-colors" size={28} />
-                    <span className="text-white font-bold mb-1">GitHub</span>
-                    <span className="text-xs text-slate-500 flex items-center">
-                      Explore repos <ExternalLink size={12} className="ml-1" />
-                    </span>
-                  </a>
-
-                  <a 
-                    href="https://www.linkedin.com/in/jyotika-u/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex flex-col p-6 glass-card rounded-2xl border border-white/5 hover:border-blue-500/30 transition-all group"
-                  >
-                    <Linkedin className="text-slate-400 group-hover:text-blue-400 mb-4 transition-colors" size={28} />
-                    <span className="text-white font-bold mb-1">LinkedIn</span>
-                    <span className="text-xs text-slate-500 flex items-center">
-                      Let's network <ExternalLink size={12} className="ml-1" />
-                    </span>
-                  </a>
-                </div>
-              </div>
             </div>
 
-            <div className="glass-card p-8 md:p-12 rounded-[2.5rem] border border-white/10 relative">
-              {isSubmitted ? (
-                <div className="text-center py-20">
-                  <div className="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle size={40} />
+            {/* Social List with premium slide-lines */}
+            <div className="space-y-4 pt-6 border-t border-white/[0.04] max-w-sm">
+              {socialChannels.map((chan, idx) => (
+                <a
+                  key={idx}
+                  href={chan.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between py-4 border-b border-white/[0.02] group text-white transition-colors duration-500"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-white/40 group-hover:text-white transition-colors">{chan.icon}</span>
+                    <span className="text-xs font-mono tracking-wider uppercase text-white/60 group-hover:text-white transition-colors">
+                      {chan.name}
+                    </span>
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-4">Message Sent!</h3>
-                  <p className="text-slate-400">Thank you for reaching out. I'll get back to you soon!</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                  
+                  <div className="flex items-center gap-1.5 font-mono text-[10px] text-white/30 group-hover:text-white transition-colors">
+                    <span>{chan.desc}</span>
+                    <ArrowUpRight size={10} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: High-End Contact Form */}
+          <div className="lg:col-span-7 glass-card rounded-3xl p-8 md:p-12 border border-white/[0.04]">
+            
+            <AnimatePresence mode="wait">
+              {isSubmitted ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.6 }}
+                  className="text-center py-20 flex flex-col items-center justify-center space-y-6"
+                >
+                  <div className="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center">
+                    <CheckCircle size={28} />
+                  </div>
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-bold text-slate-400 uppercase tracking-widest ml-1">
-                      Your Name
+                    <h4 className="text-xl font-bold tracking-tight text-white uppercase">Transmission Received</h4>
+                    <p className="text-xs text-white/50 max-w-xs mx-auto leading-relaxed">
+                      Thank you. Your message has been encrypted and piped to my inbox. I will reply within 24 hours.
+                    </p>
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.form 
+                  key="form"
+                  onSubmit={handleSubmit} 
+                  className="space-y-10"
+                >
+                  {/* Floating-style clean inputs */}
+                  <div className="space-y-1 relative">
+                    <label className="text-[9px] font-mono tracking-widest text-white/30 uppercase block">
+                      Sender Name
                     </label>
                     <input
                       type="text"
-                      id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="John Doe"
+                      placeholder="e.g. John Doe"
+                      className="w-full bg-transparent border-b border-white/[0.08] focus:border-white transition-colors py-3 text-sm text-white focus:outline-none placeholder-white/10 font-sans"
                     />
                   </div>
 
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-bold text-slate-400 uppercase tracking-widest ml-1">
+                  <div className="space-y-1 relative">
+                    <label className="text-[9px] font-mono tracking-widest text-white/30 uppercase block">
                       Email Address
                     </label>
                     <input
                       type="email"
-                      id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="john@example.com"
+                      placeholder="e.g. john@example.com"
+                      className="w-full bg-transparent border-b border-white/[0.08] focus:border-white transition-colors py-3 text-sm text-white focus:outline-none placeholder-white/10 font-sans"
                     />
                   </div>
 
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-bold text-slate-400 uppercase tracking-widest ml-1">
-                      Your Message
+                  <div className="space-y-1 relative">
+                    <label className="text-[9px] font-mono tracking-widest text-white/30 uppercase block">
+                      Transmission Parameters
                     </label>
                     <textarea
-                      id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows={5}
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition-colors resize-none"
-                      placeholder="I'd love to chat about..."
+                      rows={4}
+                      placeholder="Describe the scope of the project or internship query..."
+                      className="w-full bg-transparent border-b border-white/[0.08] focus:border-white transition-colors py-3 text-sm text-white focus:outline-none resize-none placeholder-white/10 font-sans leading-relaxed"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full btn-primary py-5 text-lg flex items-center justify-center space-x-3 group"
+                    disabled={isSending}
+                    className="w-full py-4 text-xs font-mono uppercase bg-white text-black font-semibold rounded-full flex items-center justify-center gap-2 hover:bg-[#eaeaea] transition-all disabled:opacity-50 active:scale-95 duration-500"
                   >
-                    <span>Send Transmission</span>
-                    <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    <span>{isSending ? "BROADCASTING TRANSMISSION..." : "SEND ENCRYPTED PACKET"}</span>
+                    <Send size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </button>
-                </form>
+
+                </motion.form>
               )}
-            </div>
+            </AnimatePresence>
+
           </div>
+
         </div>
+
       </div>
     </section>
   );
