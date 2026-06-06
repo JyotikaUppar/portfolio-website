@@ -28,7 +28,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="py-32 relative overflow-hidden bg-[#050505]">
+    <section id="about" className="py-32 relative overflow-hidden bg-[#08111f]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         
         {/* Section Header */}

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Mail, Github, Linkedin, Send, CheckCircle, Phone, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Contact = () => {
+  const messageRef = useRef<HTMLTextAreaElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,6 +11,24 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
+
+  useEffect(() => {
+    const handleHireIntent = () => {
+      const starterMessage = 'Hi Jyotika, I came across your portfolio and would like to discuss an internship or work opportunity with you.';
+
+      setFormData((current) => ({
+        ...current,
+        message: current.message || starterMessage
+      }));
+
+      window.setTimeout(() => {
+        messageRef.current?.focus();
+      }, 700);
+    };
+
+    window.addEventListener('hire-me-intent', handleHireIntent);
+    return () => window.removeEventListener('hire-me-intent', handleHireIntent);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,7 +76,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden bg-[#050505]">
+    <section id="contact" className="py-32 relative overflow-hidden bg-[#08111f]">
       {/* Decorative vertical grid lines */}
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
@@ -185,6 +204,7 @@ const Contact = () => {
                       Transmission Parameters
                     </label>
                     <textarea
+                      ref={messageRef}
                       name="message"
                       value={formData.message}
                       onChange={handleChange}

@@ -42,7 +42,7 @@ const ParallaxProjectImage = ({ src, alt }: { src: string; alt: string }) => {
         rotateY,
         transformStyle: "preserve-3d"
       }}
-      className="w-full h-full relative group cursor-pointer overflow-hidden rounded-[2rem] border border-white/[0.04] bg-neutral-900 aspect-[16/10]"
+      className="w-full h-full relative group cursor-pointer overflow-hidden rounded-[2rem] border border-[rgba(120,160,255,0.12)] bg-[#0b1224] aspect-[16/10]"
     >
       {/* Glow highlight reflecting hover coordinate */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--x,_50%)_var(--y,_50%),rgba(255,255,255,0.06)_0%,transparent_60%)] pointer-events-none z-10" />
@@ -58,7 +58,7 @@ const ParallaxProjectImage = ({ src, alt }: { src: string; alt: string }) => {
           loading="lazy"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#060c1a] via-[#060c1a]/20 to-transparent opacity-80" />
     </motion.div>
   );
 };
@@ -66,26 +66,26 @@ const ParallaxProjectImage = ({ src, alt }: { src: string; alt: string }) => {
 const Projects = () => {
   const projects = [
     {
-      title: "OmniSearch AI",
-      tagline: "Neural Documentation RAG Engine",
-      problem: "Traditional text indexing filters keyword strings, missing the semantic intent of complex APIs, causing navigation delays.",
-      solution: "Engineered a localized Retrieval-Augmented Generation search that splits, indexes, and queries markdown corpora via tokenized vector chunks, delivering precise developer insights in less than 100 milliseconds.",
-      tech: ["Next.js", "TypeScript", "Vector DB", "OpenAI Embedding API", "Tailwind"],
-      github: "https://github.com/JyotikaUppar/projects/tree/main/bmi%20calculator", // preserving existing user paths
-      demo: "https://jyotikauppar.github.io/projects/bmi-calculator",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80",
-      stats: "LATENCY: 94ms // CONTEXT: 8k Tokens"
+      title: "DailyDSA",
+      tagline: "Data Structures & Algorithms Learning Platform",
+      problem: "Students preparing for coding interviews need a consistent way to practice DSA questions, review company-focused topics, and track learning momentum.",
+      solution: "Built a Daily DSA platform with curated coding challenges, topic-based interview question collections, and progress-focused learning sections for structured algorithm practice.",
+      tech: ["React", "JavaScript", "CSS", "Vercel", "GitHub"],
+      github: "https://github.com/JyotikaUppar/dailydsa",
+      demo: "https://dailydsa91.vercel.app/",
+      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+      stats: "FOCUS: DSA // MODE: DAILY PRACTICE"
     },
     {
-      title: "Aura Render Engine",
-      tagline: "WebGL Shader Layout Canvas",
-      problem: "Complex dynamic layouts and lighting matrices clog CPU thread counts, resulting in stuttering navigation frame rates.",
-      solution: "Developed an interactive WebGL canvas sandbox running hardware-accelerated vertex matrices, rendering thousands of micro-nodes under custom gravity vectors at a locked 60 FPS.",
-      tech: ["TypeScript", "WebGL", "Vite", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/JyotikaUppar/projects/tree/main/todo",
-      demo: "https://jyotikauppar.github.io/projects/todo",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      stats: "FPS: 60 // GPU UTIL: 8%"
+      title: "Disease Prediction",
+      tagline: "Healthcare Machine Learning Predictor",
+      problem: "Early health-risk screening is difficult when symptoms and clinical indicators are scattered across forms, notes, or disconnected datasets.",
+      solution: "Created a disease prediction system that processes user health inputs and applies machine learning logic to estimate possible disease outcomes for faster preliminary awareness.",
+      tech: ["Python", "Machine Learning", "Data Analysis", "Healthcare AI", "GitHub"],
+      github: "https://github.com/JyotikaUppar/DiseasePrediction",
+      demo: "https://github.com/JyotikaUppar/DiseasePrediction",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+      stats: "DOMAIN: HEALTHCARE // TYPE: ML MODEL"
     },
     {
       title: "Synthetix Sync",
@@ -101,7 +101,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-32 relative overflow-hidden bg-[#050505]">
+    <section id="projects" className="py-32 relative overflow-hidden bg-[#08111f]">
       {/* Decorative vertical lines */}
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />

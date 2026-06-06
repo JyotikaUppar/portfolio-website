@@ -45,7 +45,7 @@ function App() {
   }, [mouseX, mouseY]);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#e5e5ea] select-none selection:bg-white/10 selection:text-white relative">
+    <div className="min-h-screen bg-[#060c1a] text-[#f0f4ff] select-none selection:bg-[#4f7fff]/20 selection:text-white relative">
       
       {/* Cinematic Loading Preloader */}
       <AnimatePresence mode="wait">
@@ -57,7 +57,7 @@ function App() {
               opacity: 0,
               transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
             }}
-            className="fixed inset-0 z-50 bg-[#050505] flex flex-col items-center justify-center font-mono text-[10px] tracking-[0.3em] text-white/40 uppercase"
+            className="fixed inset-0 z-50 bg-[#060c1a] flex flex-col items-center justify-center font-mono text-[10px] tracking-[0.3em] text-[#7e8fb5] uppercase"
           >
             <div className="space-y-4 text-center">
               <motion.div

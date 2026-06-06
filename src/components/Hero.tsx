@@ -73,10 +73,15 @@ const Hero = () => {
     }
   };
 
+  const handleHireMeClick = () => {
+    scrollToSection('contact');
+    window.dispatchEvent(new CustomEvent('hire-me-intent'));
+  };
+
   return (
     <section 
       ref={containerRef}
-      className="min-h-screen w-full relative flex flex-col justify-between overflow-hidden bg-[#050505] bg-grid-canvas pt-32 pb-16 px-6 md:px-12 lg:px-24"
+      className="min-h-screen w-full relative flex flex-col justify-between overflow-hidden bg-[#060c1a] bg-grid-canvas pt-32 pb-16 px-6 md:px-12 lg:px-24"
     >
       {/* Cinematic Ambient Mouse Follow Glow */}
       <div 
@@ -88,7 +93,7 @@ const Hero = () => {
       />
 
       {/* Grid overlay for aesthetic structure */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/30 to-[#050505] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#08111f]/30 to-[#060c1a] pointer-events-none z-0" />
 
       {/* Top Editorial Detail */}
       <div className="w-full flex justify-between items-start border-b border-white/[0.04] pb-6 relative z-10">
@@ -171,10 +176,10 @@ const Hero = () => {
             </MagneticButton>
 
             <MagneticButton
-              onClick={() => scrollToSection('contact')}
+              onClick={handleHireMeClick}
               className="px-6 py-3 text-xs font-mono uppercase border border-white/[0.08] text-white rounded-full bg-white/[0.01] hover:bg-white/[0.05] hover:border-white/20 transition-all"
             >
-              <span>Get in Touch</span>
+              <span>Hire Me</span>
             </MagneticButton>
           </motion.div>
         </div>

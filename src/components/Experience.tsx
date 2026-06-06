@@ -31,7 +31,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-32 relative overflow-hidden bg-[#050505]">
+    <section id="experience" className="py-32 relative overflow-hidden bg-[#060c1a]">
       {/* Decorative vertical grid lines */}
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
@@ -66,7 +66,7 @@ const Experience = () => {
                 
                 {/* Glow Bullet Indicator */}
                 <div className="absolute -left-[32px] md:-left-[48px] top-1.5 z-20 flex items-center justify-center">
-                  <div className="w-9 h-9 rounded-full bg-black border border-white/[0.08] flex items-center justify-center group-hover:border-white transition-colors duration-500 relative">
+                  <div className="w-9 h-9 rounded-full bg-[#0b1224] border border-[rgba(120,160,255,0.12)] flex items-center justify-center group-hover:border-[#4f7fff] transition-colors duration-500 relative">
                     {milestone.icon}
                     
                     {/* Ring highlight halo */}

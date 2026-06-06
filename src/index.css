@@ -19,7 +19,7 @@
 
 @layer base {
   body {
-    @apply bg-[#060c1a] text-[#dce4f5] antialiased selection:bg-white/10 selection:text-white overflow-x-hidden;
+    @apply bg-[#060c1a] text-[#f0f4ff] antialiased selection:bg-[#4f7fff]/20 selection:text-white overflow-x-hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   
@@ -33,26 +33,26 @@
 @layer components {
   /* Midnight Navy Glass Card */
   .glass-card {
-    @apply bg-[#0b1224]/70 backdrop-blur-xl border border-[rgba(120,160,255,0.07)];
+    @apply bg-[#0b1224]/70 backdrop-blur-xl border border-[rgba(120,160,255,0.12)];
   }
   
   .glass-card-hover {
     @apply transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
-           hover:bg-[#0f1a30]/90 hover:border-[rgba(120,160,255,0.15)];
+           hover:bg-[#0f1a30]/90 hover:border-[#4f7fff]/30;
   }
   
   /* Gradient text – crisp white to navy tint */
   .text-gradient-chrome {
-    @apply bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-[#7ea8ff]/40;
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-[#f0f4ff] via-white to-[#4f7fff]/45;
   }
 
   .text-gradient-subtle {
-    @apply bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-[#7ea8ff]/30;
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-[#f0f4ff]/90 to-[#4f7fff]/35;
   }
   
   /* Premium Buttons */
   .btn-premium {
-    @apply relative overflow-hidden bg-white text-[#060c1a] px-8 py-4 rounded-full font-semibold
+    @apply relative overflow-hidden bg-[#f0f4ff] text-[#060c1a] px-8 py-4 rounded-full font-semibold
            transition-all duration-500 hover:bg-[#e8eeff] active:scale-[0.97];
   }
   

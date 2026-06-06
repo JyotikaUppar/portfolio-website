@@ -25,9 +25,9 @@ const Header = () => {
 
   const handleResumeDownload = () => {
     const doc = new jsPDF();
-    const primaryColor = '#050505';
-    const secondaryColor = '#48484a';
-    const accentColor = '#8e8e93';
+    const primaryColor = '#060c1a';
+    const secondaryColor = '#7e8fb5';
+    const accentColor = '#4f7fff';
     
     // Header
     doc.setTextColor(primaryColor);
@@ -121,8 +121,8 @@ const Header = () => {
     y += 8;
 
     const projects = [
-      { title: 'OmniSearch AI (Neural Semantic Engine)', tech: 'React, TypeScript, Vector DB, LLMs', desc: 'A semantic search RAG engine that queries multi-format documentation with vector embeddings, sub-100ms latency.' },
-      { title: 'Aura Engine (WebGL Sandbox)', tech: 'TypeScript, Tailwind CSS, Vite', desc: 'High-performance interactive layout pipeline rendering responsive nodes and custom shader particle canvases.' },
+      { title: 'DailyDSA (DSA Learning Platform)', tech: 'React, JavaScript, CSS, Vercel', desc: 'A structured Data Structures and Algorithms practice platform with curated daily challenges, interview question collections, and progress-focused learning sections.' },
+      { title: 'Disease Prediction (Healthcare ML)', tech: 'Python, Machine Learning, Data Analysis', desc: 'A healthcare-focused prediction system that processes user health inputs and applies machine learning logic to estimate possible disease outcomes.' },
       { title: 'Synthetix Sync (Local-First Engine)', tech: 'Node.js, Express, Local Storage, WebSockets', desc: 'Local-first offline syncing engine with conflict-free replicated data types (CRDTs) and persistent DB sync.' }
     ];
 
@@ -162,7 +162,7 @@ const Header = () => {
         <nav 
           className={`flex items-center justify-between mx-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] px-8 py-3 rounded-full border ${
             isScrolled 
-              ? 'glass-card border-white/[0.08] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] scale-95 py-2.5 backdrop-blur-2xl bg-black/80' 
+              ? 'glass-card border-[rgba(120,160,255,0.12)] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.55)] scale-95 py-2.5 backdrop-blur-2xl bg-[#0b1224]/90' 
               : 'bg-transparent border-transparent'
           }`}
         >
@@ -185,7 +185,7 @@ const Header = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-xs font-mono tracking-widest text-[#8e8e93] hover:text-white transition-colors relative group uppercase"
+                className="text-xs font-mono tracking-widest text-[#7e8fb5] hover:text-[#f0f4ff] transition-colors relative group uppercase"
               >
                 {link.name}
                 <span className="absolute -bottom-1.5 left-0 w-0 h-[1px] bg-white transition-all duration-500 ease-out group-hover:w-full"></span>
@@ -223,12 +223,12 @@ const Header = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="md:hidden absolute top-20 left-6 right-6 z-40"
             >
-              <div className="glass-card border-white/[0.08] rounded-[2rem] p-8 flex flex-col space-y-6 shadow-2xl bg-black/95">
+              <div className="glass-card border-[rgba(120,160,255,0.12)] rounded-[2rem] p-8 flex flex-col space-y-6 shadow-2xl bg-[#0b1224]/95">
                 {navLinks.map((link) => (
                   <button
                     key={link.id}
                     onClick={() => scrollToSection(link.id)}
-                    className="text-xl font-bold tracking-tight text-[#8e8e93] hover:text-white transition-colors text-left"
+                    className="text-xl font-bold tracking-tight text-[#7e8fb5] hover:text-[#f0f4ff] transition-colors text-left"
                   >
                     {link.name}
                   </button>

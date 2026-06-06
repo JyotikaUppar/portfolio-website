@@ -39,7 +39,7 @@ const LetsTalk = () => {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9, y: 10 }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="bg-[#0a0a0a] border border-white/[0.08] rounded-3xl p-6 shadow-[0_30px_80px_-10px_rgba(0,0,0,0.9)] backdrop-blur-2xl w-72"
+                  className="bg-[#0b1224] border border-[rgba(120,160,255,0.12)] rounded-3xl p-6 shadow-[0_30px_80px_-10px_rgba(0,0,0,0.65)] backdrop-blur-2xl w-72"
                 >
                   {/* Header */}
                   <div className="flex items-center justify-between mb-5 pb-4 border-b border-white/[0.04]">
@@ -112,7 +112,7 @@ const LetsTalk = () => {
               whileTap={{ scale: 0.95 }}
               className={`relative flex items-center gap-2.5 px-5 py-3.5 rounded-full text-xs font-mono uppercase font-semibold shadow-[0_20px_60px_-8px_rgba(0,0,0,0.8)] transition-all duration-500 ${
                 isOpen
-                  ? 'bg-[#111] border border-white/[0.12] text-white'
+                  ? 'bg-[#0b1224] border border-[rgba(120,160,255,0.12)] text-[#f0f4ff]'
                   : 'bg-white text-black border border-transparent hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]'
               }`}
             >
