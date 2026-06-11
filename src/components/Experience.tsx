@@ -4,34 +4,20 @@ import { motion } from 'framer-motion';
 
 const Experience = () => {
   const milestones = [
-    {
-      period: "2025 — PRESENT",
-      role: "Neural Integration & Open-Source Contributor",
-      institution: "Independent Architecture Lab",
-      description: "Focusing on local-first database syncing libraries, RAG pipelines, and WebGL layouts. Refining state tree manipulation under intermittent socket signals and latency profiling.",
-      icon: <Cpu size={16} className="text-white" />,
-      tag: "Engineering"
-    },
+  
     {
       period: "2023 — 2026",
       role: "Bachelor of Science in Information Technology",
       institution: "S.N.D.T Women's University, Mumbai",
-      description: "Rigorous coursework in object-oriented programming, data structures, relational and non-relational database architectures. Specializing in full-stack application models, currently maintaining a 8.50 CGPA.",
+      description: "Building a strong foundation in programming, data structures, databases, and web development through my BSc IT coursework. I focus on practical full-stack projects and problem-solving while maintaining an 8.50 CGPA.",
       icon: <GraduationCap size={16} className="text-white" />,
       tag: "Academic Crucible"
     },
-    {
-      period: "2024 — 2025",
-      role: "Full-Stack Engineer & Interaction Designer",
-      institution: "Dynamic Web Systems",
-      description: "Built lightweight responsive frameworks, offline-enabled data lists, weather dashboard APIs, and BMI telemetry calculators. Developed deep intuition for typography metrics and spring dynamics.",
-      icon: <Code2 size={16} className="text-white" />,
-      tag: "Production Sandbox"
-    }
+    
   ];
 
   return (
-    <section id="experience" className="py-32 relative overflow-hidden bg-[#060c1a]">
+    <section id="experience" className="py-32 relative overflow-hidden bg-[#0D1117]">
       {/* Decorative vertical grid lines */}
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
@@ -66,7 +52,7 @@ const Experience = () => {
                 
                 {/* Glow Bullet Indicator */}
                 <div className="absolute -left-[32px] md:-left-[48px] top-1.5 z-20 flex items-center justify-center">
-                  <div className="w-9 h-9 rounded-full bg-[#0b1224] border border-[rgba(120,160,255,0.12)] flex items-center justify-center group-hover:border-[#4f7fff] transition-colors duration-500 relative">
+                  <div className="w-9 h-9 rounded-full bg-[#161B22] border border-[rgba(0,200,150,0.14)] flex items-center justify-center group-hover:border-[#00C896] transition-colors duration-500 relative">
                     {milestone.icon}
                     
                     {/* Ring highlight halo */}

@@ -18,7 +18,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#060c1a] text-[#f0f4ff] border-t border-[rgba(120,160,255,0.12)] py-16 relative z-10 overflow-hidden">
+    <footer className="bg-[#0D1117] text-[#F8FAFC] border-t border-[rgba(0,200,150,0.14)] py-16 relative z-10 overflow-hidden">
       
       {/* Background abstract details */}
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />

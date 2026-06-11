@@ -81,7 +81,7 @@ const Hero = () => {
   return (
     <section 
       ref={containerRef}
-      className="min-h-screen w-full relative flex flex-col justify-between overflow-hidden bg-[#060c1a] bg-grid-canvas pt-32 pb-16 px-6 md:px-12 lg:px-24"
+      className="min-h-screen w-full relative flex flex-col justify-between overflow-hidden bg-[#0D1117] bg-grid-canvas pt-32 pb-16 px-6 md:px-12 lg:px-24"
     >
       {/* Cinematic Ambient Mouse Follow Glow */}
       <div 
@@ -93,7 +93,7 @@ const Hero = () => {
       />
 
       {/* Grid overlay for aesthetic structure */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#08111f]/30 to-[#060c1a] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#161B22]/30 to-[#0D1117] pointer-events-none z-0" />
 
       {/* Top Editorial Detail */}
       <div className="w-full flex justify-between items-start border-b border-white/[0.04] pb-6 relative z-10">

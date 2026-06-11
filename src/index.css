@@ -5,21 +5,22 @@
 @tailwind utilities;
 
 :root {
-  --bg-base:      #060c1a;
-  --bg-card:      #0b1224;
-  --bg-card-alt:  #0f172a;
-  --text-primary: #f0f4ff;
-  --text-secondary: #7e8fb5;
-  --text-muted:   #3a4a6b;
-  --border-subtle: rgba(120, 160, 255, 0.06);
-  --border-medium: rgba(120, 160, 255, 0.12);
-  --accent-blue:  #4f7fff;
-  --accent-glow:  rgba(79, 127, 255, 0.15);
+  --bg-base:      #0d1117;
+  --bg-card:      #161b22;
+  --bg-card-alt:  #1b222b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted:   #64748b;
+  --border-subtle: rgba(0, 200, 150, 0.08);
+  --border-medium: rgba(0, 200, 150, 0.16);
+  --accent-primary: #00c896;
+  --accent-secondary: #7ee8fa;
+  --accent-glow: rgba(0, 200, 150, 0.18);
 }
 
 @layer base {
   body {
-    @apply bg-[#060c1a] text-[#f0f4ff] antialiased selection:bg-[#4f7fff]/20 selection:text-white overflow-x-hidden;
+    @apply bg-[var(--bg-base)] text-[var(--text-primary)] antialiased selection:bg-[#00C896]/20 selection:text-white overflow-x-hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   
@@ -33,49 +34,49 @@
 @layer components {
   /* Midnight Navy Glass Card */
   .glass-card {
-    @apply bg-[#0b1224]/70 backdrop-blur-xl border border-[rgba(120,160,255,0.12)];
+    @apply bg-[#161B22]/75 backdrop-blur-xl border border-[rgba(0,200,150,0.14)];
   }
   
   .glass-card-hover {
     @apply transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
-           hover:bg-[#0f1a30]/90 hover:border-[#4f7fff]/30;
+           hover:bg-[#1B222B]/90 hover:border-[#00C896]/35;
   }
   
   /* Gradient text – crisp white to navy tint */
   .text-gradient-chrome {
-    @apply bg-clip-text text-transparent bg-gradient-to-b from-[#f0f4ff] via-white to-[#4f7fff]/45;
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-[#F8FAFC] via-white to-[#00C896]/45;
   }
 
   .text-gradient-subtle {
-    @apply bg-clip-text text-transparent bg-gradient-to-b from-[#f0f4ff]/90 to-[#4f7fff]/35;
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-[#F8FAFC]/90 to-[#7EE8FA]/35;
   }
   
   /* Premium Buttons */
   .btn-premium {
-    @apply relative overflow-hidden bg-[#f0f4ff] text-[#060c1a] px-8 py-4 rounded-full font-semibold
-           transition-all duration-500 hover:bg-[#e8eeff] active:scale-[0.97];
+    @apply relative overflow-hidden bg-[#00C896] text-[#0D1117] px-8 py-4 rounded-full font-semibold
+           transition-all duration-500 hover:bg-[#7EE8FA] active:scale-[0.97];
   }
   
   .btn-premium-secondary {
-    @apply relative overflow-hidden bg-[#0b1224] border border-[rgba(120,160,255,0.12)] text-white
+    @apply relative overflow-hidden bg-[#161B22] border border-[rgba(0,200,150,0.14)] text-white
            px-8 py-4 rounded-full font-medium transition-all duration-500
-           hover:bg-[#111f3a] hover:border-[rgba(120,160,255,0.25)] active:scale-[0.97];
+           hover:bg-[#1B222B] hover:border-[#7EE8FA]/35 active:scale-[0.97];
   }
 
   /* Micro grid canvas — navy tint lines */
   .bg-grid-canvas {
     background-size: 44px 44px;
     background-image:
-      linear-gradient(to right,  rgba(120,160,255,0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(120,160,255,0.04) 1px, transparent 1px);
+      linear-gradient(to right,  rgba(0,200,150,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,200,150,0.05) 1px, transparent 1px);
   }
 }
 
 /* Custom thin scrollbar in navy tones */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #060c1a; }
-::-webkit-scrollbar-thumb { background: #1a2645; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: #253361; }
+::-webkit-scrollbar-track { background: #0D1117; }
+::-webkit-scrollbar-thumb { background: #1f4f45; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #00C896; }
 
 /* Soft navy-blue cursor glow */
 .cursor-glow-spring {
@@ -83,7 +84,7 @@
   position: fixed;
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(79,127,255,0.07) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(0,200,150,0.08) 0%, transparent 65%);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;

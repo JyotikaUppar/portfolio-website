@@ -33,7 +33,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-32 relative overflow-hidden bg-[#060c1a]">
+    <section id="skills" className="py-32 relative overflow-hidden bg-[#0D1117]">
       {/* Decorative vertical lines */}
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />

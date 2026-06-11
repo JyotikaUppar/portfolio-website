@@ -42,7 +42,7 @@ const ParallaxProjectImage = ({ src, alt }: { src: string; alt: string }) => {
         rotateY,
         transformStyle: "preserve-3d"
       }}
-      className="w-full h-full relative group cursor-pointer overflow-hidden rounded-[2rem] border border-[rgba(120,160,255,0.12)] bg-[#0b1224] aspect-[16/10]"
+      className="w-full h-full relative group cursor-pointer overflow-hidden rounded-[2rem] border border-[rgba(0,200,150,0.14)] bg-[#161B22] aspect-[16/10]"
     >
       {/* Glow highlight reflecting hover coordinate */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--x,_50%)_var(--y,_50%),rgba(255,255,255,0.06)_0%,transparent_60%)] pointer-events-none z-10" />
@@ -58,7 +58,7 @@ const ParallaxProjectImage = ({ src, alt }: { src: string; alt: string }) => {
           loading="lazy"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#060c1a] via-[#060c1a]/20 to-transparent opacity-80" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117] via-[#0D1117]/20 to-transparent opacity-80" />
     </motion.div>
   );
 };
@@ -87,21 +87,11 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
       stats: "DOMAIN: HEALTHCARE // TYPE: ML MODEL"
     },
-    {
-      title: "Synthetix Sync",
-      tagline: "Local-First Realtime Sync Engine",
-      problem: "Intermittent client-server connection dropout terminates user sessions and creates severe structural database conflicts.",
-      solution: "Constructed a persistent conflict-free replicated data sequence (CRDT) that writes operations locally to client storage, automatically merging state logs on WebSocket recovery.",
-      tech: ["React.js", "Node.js", "Express.js", "WebSockets", "Local Storage"],
-      github: "https://github.com/JyotikaUppar/projects/tree/main/weather",
-      demo: "https://jyotikauppar.github.io/projects/weather",
-      image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=1200&q=80",
-      stats: "SYNC: <12ms // CONFLICTS: 0%"
-    }
+  
   ];
 
   return (
-    <section id="projects" className="py-32 relative overflow-hidden bg-[#08111f]">
+    <section id="projects" className="py-32 relative overflow-hidden bg-[#111820]">
       {/* Decorative vertical lines */}
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
