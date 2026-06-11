@@ -143,7 +143,7 @@ const Hero = () => {
               Uppar
             </h1>
             <span className="text-xs font-mono tracking-[0.3em] text-white/30 uppercase pl-1 sm:pl-3">
-              [ IT ENGINEER ]
+              [ SOFTWARE ENGINEER ]
             </span>
           </motion.div>
         </div>
