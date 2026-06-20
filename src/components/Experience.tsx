@@ -4,16 +4,22 @@ import { motion } from 'framer-motion';
 
 const Experience = () => {
   const milestones = [
-  
+    {
+      period: "June 2026",
+      role: "Web Development Intern",
+      institution: "She Can Foundation (Remote)",
+      description: "Developed a responsive web form using HTML, CSS, and JavaScript as part of the Full Stack Development Internship Task. Implemented user input fields including Name, Email, and Message with secure form submission, and added client-side validation logic to provide immediate feedback.",
+      icon: <Code2 size={16} className="text-white" />,
+      tag: "Industry Experience"
+    },
     {
       period: "2023 — 2026",
       role: "Bachelor of Science in Information Technology",
       institution: "S.N.D.T Women's University, Mumbai",
-      description: "Building a strong foundation in programming, data structures, databases, and web development through my BSc IT coursework. I focus on practical full-stack projects and problem-solving while maintaining an 8.50 CGPA.",
+      description: "Building a strong foundation in programming, data structures, databases, and web development through my BSc IT coursework. I focus on practical full-stack projects and problem-solving while maintaining a 7.60 CGPA.",
       icon: <GraduationCap size={16} className="text-white" />,
       tag: "Academic Crucible"
     },
-    
   ];
 
   return (

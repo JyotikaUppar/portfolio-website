@@ -87,7 +87,28 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
       stats: "DOMAIN: HEALTHCARE // TYPE: ML MODEL"
     },
-  
+    {
+      title: "Construction Management",
+      tagline: "Full-Stack Project Workflow Optimizer",
+      problem: "Construction teams suffer from disorganized asset logs, out-of-sync schedules, and complex resource allocations scattered across separate systems.",
+      solution: "Developed a full-stack construction management application with SQL databases and robust backend routing, helping teams centralize resources, monitor timelines, and track worksite progress.",
+      tech: ["Node.js", "Express.js", "MySQL", "JavaScript", "HTML/CSS", "Git"],
+      github: "https://github.com/JyotikaUppar/Construction",
+      demo: "https://github.com/JyotikaUppar/Construction",
+      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+      stats: "STACK: FULL-STACK // TYPE: MANAGEMENT PLATFORM"
+    },
+    {
+      title: "FaceTrace",
+      tagline: "Computer Vision Face Detection & Tracking",
+      problem: "Traditional image processing and verification workflows require manual validation and struggle with real-time video stream low-latency requirements.",
+      solution: "Engineered a high-performance facial recognition and tracking system using Python and computer vision models, capable of processing video frames to detect, align, and match user faces.",
+      tech: ["Python", "OpenCV", "Machine Learning", "Computer Vision", "Git"],
+      github: "https://github.com/JyotikaUppar/FaceTrace",
+      demo: "https://github.com/JyotikaUppar/FaceTrace",
+      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+      stats: "ENGINE: OPENCV // TYPE: COMPUTER VISION API"
+    }
   ];
 
   return (

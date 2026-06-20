@@ -69,7 +69,7 @@ const About = () => {
                 Creating hyper-focused digital experiences that feel responsive and alive.
               </h3>
               <p className="text-sm md:text-base text-white/50 leading-relaxed space-y-4 max-w-2xl font-light">
-                I am a specialized Information Technology student at S.N.D.T Women's University with a deep commitment to high-fidelity product design. I view software engineering not just as a syntax problem, but as the editorial composition of user flows, latency reduction, and predictive AI utilities.
+                I am a Master of Science in Information Technology student at KES Shroff College, having completed my Bachelor of Science in Information Technology from SNDT Women's University. I view software engineering not just as a syntax problem, but as the editorial composition of user flows, latency reduction, and predictive AI utilities.
               </p>
             </div>
 
@@ -95,13 +95,13 @@ const About = () => {
               </div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-5xl font-black text-white tracking-tighter">8.50</div>
-                  <div className="text-[10px] font-mono tracking-widest text-white/30 uppercase mt-1">Secondary Year CGPA</div>
+                  <div className="text-5xl font-black text-white tracking-tighter">7.60</div>
+                  <div className="text-[10px] font-mono tracking-widest text-white/30 uppercase mt-1">B.Sc. IT Overall CGPA</div>
                 </div>
                 <div className="h-[1px] bg-white/[0.04]" />
                 <div>
-                  <div className="text-4xl font-black text-white/70 tracking-tighter">7.73</div>
-                  <div className="text-[10px] font-mono tracking-widest text-white/30 uppercase mt-1">Primary Year CGPA</div>
+                  <div className="text-4xl font-black text-white/70 tracking-tighter">M.Sc. IT</div>
+                  <div className="text-[10px] font-mono tracking-widest text-white/30 uppercase mt-1">Pursuing (2026 — 2028)</div>
                 </div>
               </div>
             </div>

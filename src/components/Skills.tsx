@@ -7,28 +7,28 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      category: "Frontend System",
+      category: "Frontend & Mobile",
       icon: <Monitor size={18} className="text-white/60" />,
-      skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "CSS3 / HTML5"],
-      level: "Aesthetic Interfaces"
+      skills: ["React.js", "Next.js", "Flutter", "Bootstrap", "HTML5 & CSS3", "Dart"],
+      level: "Aesthetic & Responsive UIs"
     },
     {
-      category: "Backend Engine",
+      category: "Backend & Systems",
       icon: <Server size={18} className="text-white/60" />,
-      skills: ["Node.js", "Express.js", "PostgreSQL", "MongoDB", "Firebase & WebSockets"],
-      level: "Performant Data Flow"
+      skills: ["Node.js", "Express.js", "Django", "JavaScript (ES6+)", "Core Java"],
+      level: "Scalable Logic Engines"
     },
     {
-      category: "Intelligence Layer",
+      category: "Databases & ML",
       icon: <Brain size={18} className="text-white/60" />,
-      skills: ["Python Core", "LLM APIs Integration", "RAG System design", "Vector Database", "Prompt Systems"],
-      level: "Predictive Utilities"
+      skills: ["Python", "MySQL", "SQLite", "MongoDB", "Data Structures & Algorithms"],
+      level: "Structured Storage & Inference"
     },
     {
       category: "Operations & Tools",
       icon: <Wrench size={18} className="text-white/60" />,
-      skills: ["Git Versioning", "GitHub Actions", "Docker Sandbox", "Vite Bundler", "Figma Layouts"],
-      level: "Development Pipeline"
+      skills: ["Git & GitHub", "VS Code", "Postman", "JIRA & Trello", "MS Office / Excel"],
+      level: "Productivity & Version Control"
     }
   ];
 
