@@ -110,7 +110,7 @@ const Header = () => {
                 ))}
                 <div className="h-[1px] bg-white/5 w-full my-2"></div>
                 <a
-                  href="/JyotikaResume-new.pdf"
+                  href="/JyotikaResume.pdf"
                   download
                   className="w-full py-4 text-sm font-mono uppercase bg-white text-black font-semibold rounded-full flex items-center justify-center gap-2 hover:bg-[#eaeaea] transition-colors"
                 >
