@@ -69,14 +69,14 @@ const Contact = () => {
   };
 
   const socialChannels = [
-    { name: 'Phone', url: 'tel:+919324781880', icon: <Phone size={14} />, desc: '+91 93247 81880' },
-    { name: 'Github', url: 'https://github.com/JyotikaUppar', icon: <Github size={14} />, desc: '@JyotikaUppar' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jyotika-u/', icon: <Linkedin size={14} />, desc: 'jyotika-u' },
-    { name: 'Email', url: 'mailto:jayauppar2@gmail.com', icon: <Mail size={14} />, desc: 'jayauppar2@gmail.com' }
+    { name: 'Phone', url: 'tel:[Your Phone]', icon: <Phone size={14} />, desc: '[Your Phone]' },
+    { name: 'Github', url: 'https://github.com/[Your Github]', icon: <Github size={14} />, desc: '@[Your Github]' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/[Your LinkedIn]/', icon: <Linkedin size={14} />, desc: '[Your LinkedIn]' },
+    { name: 'Email', url: 'mailto:[Your Email]', icon: <Mail size={14} />, desc: '[Your Email]' }
   ];
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden bg-[#111820]">
+    <section id="contact" className="py-32 relative overflow-hidden bg-[#111820]/60 backdrop-blur-sm">
       {/* Decorative vertical grid lines */}
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
@@ -90,7 +90,7 @@ const Contact = () => {
               [ 05 // TRANSMISSION ]
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white uppercase">
-              LET'S <span className="text-white/40 italic font-light font-sans lowercase">connect</span>
+              LET'S <span className="text-white/40 italic font-light font-sans lowercase">[contact]</span>
             </h2>
           </div>
           

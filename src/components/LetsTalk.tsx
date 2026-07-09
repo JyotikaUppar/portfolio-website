@@ -15,9 +15,9 @@ const LetsTalk = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const phone = '+91 93247 81880';
-  const phoneHref = 'tel:+919324781880';
-  const whatsappHref = 'https://wa.me/919324781880?text=Hi%20Jyotika%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect!';
+  const phone = '[Your Phone]';
+  const phoneHref = 'tel:[Your Phone]';
+  const whatsappHref = 'https://wa.me/[Your Phone]?text=Hi%20Jyotika%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect!';
 
   return (
     <>
@@ -60,7 +60,7 @@ const LetsTalk = () => {
                     </div>
                     <div>
                       <p className="text-white text-xs font-semibold">Jyotika Uppar</p>
-                      <p className="text-white/40 text-[10px] font-mono">BSc IT Engineer · Full-Stack</p>
+                      <p className="text-white/40 text-[10px] font-mono">Software Developer</p>
                     </div>
                   </div>
 
@@ -99,7 +99,7 @@ const LetsTalk = () => {
                   </div>
 
                   <p className="text-[9px] font-mono text-white/20 text-center uppercase tracking-wider mt-4">
-                    Mumbai, India · UTC +5:30
+                    [Location] · UTC [Timezone]
                   </p>
                 </motion.div>
               )}

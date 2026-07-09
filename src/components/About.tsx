@@ -28,7 +28,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="py-32 relative overflow-hidden bg-[#111820]">
+    <section id="about" className="py-32 relative overflow-hidden bg-[#111820]/60 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         
         {/* Section Header */}
@@ -38,7 +38,7 @@ const About = () => {
               [ 01 // OVERVIEW ]
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white uppercase">
-              ABOUT <span className="text-white/40 italic font-light font-sans lowercase">me</span>
+              ABOUT <span className="text-white/40 italic font-light font-sans lowercase">[about]</span>
             </h2>
           </div>
           
@@ -69,7 +69,7 @@ const About = () => {
                 Creating hyper-focused digital experiences that feel responsive and alive.
               </h3>
               <p className="text-sm md:text-base text-white/50 leading-relaxed space-y-4 max-w-2xl font-light">
-                I am a Master of Science in Information Technology student at KES Shroff College, having completed my Bachelor of Science in Information Technology from SNDT Women's University. I view software engineering not just as a syntax problem, but as the editorial composition of user flows, latency reduction, and predictive AI utilities.
+                I am a [education] student at [Your University], having completed my [education] from [Your University]. I view software engineering not just as a syntax problem, but as the editorial composition of user flows, latency reduction, and predictive AI utilities.
               </p>
             </div>
 
@@ -95,19 +95,19 @@ const About = () => {
               </div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-5xl font-black text-white tracking-tighter">7.60</div>
-                  <div className="text-[10px] font-mono tracking-widest text-white/30 uppercase mt-1">B.Sc. IT Overall CGPA</div>
+                  <div className="text-5xl font-black text-white tracking-tighter">7.69</div>
+                  <div className="text-[10px] font-mono tracking-widest text-white/30 uppercase mt-1">[education] Overall CGPA</div>
                 </div>
                 <div className="h-[1px] bg-white/[0.04]" />
                 <div>
-                  <div className="text-4xl font-black text-white/70 tracking-tighter">M.Sc. IT</div>
+                  <div className="text-4xl font-black text-white/70 tracking-tighter">Master's Degree</div>
                   <div className="text-[10px] font-mono tracking-widest text-white/30 uppercase mt-1">Pursuing (2026 — 2028)</div>
                 </div>
               </div>
             </div>
 
             <div className="mt-8 font-mono text-[10px] tracking-wider text-white/30 uppercase">
-              S.N.D.T UNIVERSITY, MUMBAI
+              [Your University]
             </div>
           </motion.div>
 
@@ -140,7 +140,7 @@ const About = () => {
                 </div>
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-white/40">LOCATION:</span>
-                  <span className="text-white/80 font-bold">MUMBAI / IN</span>
+                  <span className="text-white/80 font-bold">[Location]</span>
                 </div>
               </div>
             </div>

@@ -6,9 +6,11 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import LetsTalk from './components/LetsTalk';
 import Footer from './components/Footer';
+import AnimatedBackground from './components/AnimatedBackground';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +24,7 @@ function App() {
 
   useEffect(() => {
     // Set descriptive metadata for elite SEO
-    document.title = 'Jyotika Uppar | Software Engineer | Full-Stack & AI Systems';
+    document.title = 'Jyotika Uppar | Software Developer';
     document.documentElement.style.scrollBehavior = 'smooth';
 
     // Simulate cinematic loading preloader sequence
@@ -45,8 +47,11 @@ function App() {
   }, [mouseX, mouseY]);
 
   return (
-    <div className="min-h-screen bg-[#0D1117] text-[#F8FAFC] select-none selection:bg-[#00C896]/20 selection:text-white relative">
+    <div className="min-h-screen bg-[#090D14] text-[#F8FAFC] select-none selection:bg-[#00C896]/20 selection:text-white relative">
       
+      {/* Dynamic Cosmic Neural Network background */}
+      <AnimatedBackground />
+
       {/* Cinematic Loading Preloader */}
       <AnimatePresence mode="wait">
         {isLoading && (
@@ -57,7 +62,7 @@ function App() {
               opacity: 0,
               transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
             }}
-            className="fixed inset-0 z-50 bg-[#0D1117] flex flex-col items-center justify-center font-mono text-[10px] tracking-[0.3em] text-[#94A3B8] uppercase"
+            className="fixed inset-0 z-50 bg-[#090D14] flex flex-col items-center justify-center font-mono text-[10px] tracking-[0.3em] text-[#94A3B8] uppercase"
           >
             <div className="space-y-4 text-center">
               <motion.div
@@ -110,6 +115,7 @@ function App() {
         <Skills />
         <Projects />
         <Experience />
+        <Education />
         <Contact />
       </main>
       

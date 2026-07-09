@@ -6,8 +6,8 @@ const Education = () => {
     {
       degree: "Master of Science",
       field: "Information Technology",
-      institution: "Kandivali Education Society B.K Shroff College, Kandivali, Mumbai",
-      duration: "July 2026 — August 2028",
+      institution: "[Mumbai University]",
+      duration: "[2026-2028]",
       status: "Pursuing",
       statusColor: "text-purple-400 bg-purple-500/10",
       iconGradient: "from-purple-600 to-pink-600",
@@ -21,15 +21,15 @@ const Education = () => {
     {
       degree: "Bachelor of Science",
       field: "Information Technology",
-      institution: "S.N.D.T Women's University, Mumbai (Churchgate)",
-      duration: "August 2023 — July 2026",
+      institution: "[Shreemati Nathibai Damodar Thackersey University]",
+      duration: "[2023-2026]",
       status: "Completed",
       statusColor: "text-emerald-400 bg-emerald-500/10",
       iconGradient: "from-blue-600 to-purple-600",
       calendarIconColor: "text-blue-500",
       awardIconColor: "text-purple-500",
       details: [
-        { label: "Overall CGPA", value: "7.60 / 10.00" },
+        { label: "Overall CGPA", value: "[CGPA]" },
         { label: "Project Focus", value: "Full-Stack Web Architectures & Artificial Intelligence Integrations" }
       ]
     }
@@ -40,7 +40,7 @@ const Education = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Academic <span className="text-gradient">Journey</span>
+            Academic <span className="text-gradient">[education]</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
             My foundation in Information Technology, focusing on modern engineering principles and continuous growth.

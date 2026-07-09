@@ -45,11 +45,11 @@ const Header = () => {
             className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="w-9 h-9 bg-white text-black rounded-full flex items-center justify-center font-bold text-sm group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 bg-white text-black rounded-full flex items-center justify-center font-bold text-xs group-hover:scale-105 transition-transform">
               JU
             </div>
             <span className="text-xs tracking-[0.3em] font-mono text-white/50 group-hover:text-white transition-colors uppercase">
-              ENGINEER
+              SOFTWARE DEVELOPER
             </span>
           </div>
 
@@ -70,11 +70,11 @@ const Header = () => {
           {/* CTA / Resume Download */}
           <div className="hidden md:flex items-center">
             <a
-              href="/JyotikaResume.pdf"
+              href="src\assests\JyotikaUppar.pdf"
               download
               className="flex items-center gap-1.5 px-5 py-2 text-xs font-mono uppercase border border-white/[0.08] rounded-full text-white bg-white/[0.02] hover:bg-white hover:text-black hover:border-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95"
             >
-              <span>Resume</span>
+              <span>[Resume]</span>
               <Download size={12} />
             </a>
           </div>
@@ -110,11 +110,11 @@ const Header = () => {
                 ))}
                 <div className="h-[1px] bg-white/5 w-full my-2"></div>
                 <a
-                  href="/JyotikaResume.pdf"
+                  href="/JyotikaUpparResume.pdf"
                   download
                   className="w-full py-4 text-sm font-mono uppercase bg-white text-black font-semibold rounded-full flex items-center justify-center gap-2 hover:bg-[#eaeaea] transition-colors"
                 >
-                  <span>Download CV</span>
+                  <span>[Resume]</span>
                   <Download size={16} />
                 </a>
               </div>

@@ -81,7 +81,7 @@ const Hero = () => {
   return (
     <section 
       ref={containerRef}
-      className="min-h-screen w-full relative flex flex-col justify-between overflow-hidden bg-[#0D1117] bg-grid-canvas pt-32 pb-16 px-6 md:px-12 lg:px-24"
+      className="min-h-screen w-full relative flex flex-col justify-between overflow-hidden bg-transparent bg-grid-canvas pt-32 pb-16 px-6 md:px-12 lg:px-24"
     >
       {/* Cinematic Ambient Mouse Follow Glow */}
       <div 
@@ -143,7 +143,7 @@ const Hero = () => {
               Uppar
             </h1>
             <span className="text-xs font-mono tracking-[0.3em] text-white/30 uppercase pl-1 sm:pl-3">
-              [ SOFTWARE ENGINEER ]
+              [ SOFTWARE DEVELOPER ]
             </span>
           </motion.div>
         </div>
@@ -197,8 +197,8 @@ const Hero = () => {
           transition={{ duration: 1.5, delay: 0.5 }}
           className="flex gap-6"
         >
-          <span className="hover:text-white transition-colors cursor-default">LOC: MUMBAI / IND</span>
-          <span className="hidden sm:inline hover:text-white transition-colors cursor-default">COORD: 19.0760 N, 72.8777 E</span>
+          <span className="hover:text-white transition-colors cursor-default">LOC: [Location]</span>
+          <span className="hidden sm:inline hover:text-white transition-colors cursor-default">COORD: [Coordinates]</span>
         </motion.div>
         
         <motion.button

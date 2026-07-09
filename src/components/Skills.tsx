@@ -27,13 +27,13 @@ const Skills = () => {
     {
       category: "Operations & Tools",
       icon: <Wrench size={18} className="text-white/60" />,
-      skills: ["Git & GitHub", "VS Code", "Postman", "JIRA & Trello", "MS Office / Excel"],
+      skills: ["Git & GitHub", "VS Code", "Postman", "JIRA & Trello", "MS Office / Excel" ],
       level: "Productivity & Version Control"
     }
   ];
 
   return (
-    <section id="skills" className="py-32 relative overflow-hidden bg-[#0D1117]">
+    <section id="skills" className="py-32 relative overflow-hidden bg-[#0D1117]/60 backdrop-blur-sm">
       {/* Decorative vertical lines */}
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
@@ -47,7 +47,7 @@ const Skills = () => {
               [ 02 // CAPABILITIES ]
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white uppercase">
-              TECHNICAL <span className="text-white/40 italic font-light font-sans lowercase">arsenal</span>
+              TECHNICAL <span className="text-white/40 italic font-light font-sans lowercase">[skills]</span>
             </h2>
           </div>
           

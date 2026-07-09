@@ -12,13 +12,13 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <Github size={18} />, url: 'https://github.com/JyotikaUppar' },
-    { icon: <Linkedin size={18} />, url: 'https://www.linkedin.com/in/jyotika-u/' },
-    { icon: <Mail size={18} />, url: 'mailto:jayauppar2@gmail.com' }
+    { icon: <Github size={18} />, url: 'https://github.com/[Your Github]' },
+    { icon: <Linkedin size={18} />, url: 'https://www.linkedin.com/in/[Your LinkedIn]/' },
+    { icon: <Mail size={18} />, url: 'mailto:[Your Email]' }
   ];
 
   return (
-    <footer className="bg-[#0D1117] text-[#F8FAFC] border-t border-[rgba(0,200,150,0.14)] py-16 relative z-10 overflow-hidden">
+    <footer className="bg-[#0D1117]/80 backdrop-blur-sm text-[#F8FAFC] border-t border-[rgba(0,200,150,0.14)] py-16 relative z-10 overflow-hidden">
       
       {/* Background abstract details */}
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
@@ -39,7 +39,7 @@ const Footer = () => {
                 JU
               </div>
               <span className="text-[10px] tracking-[0.25em] font-mono text-white/50 group-hover:text-white transition-colors uppercase">
-                JYOTIKA UPPAR
+                Jyotika Uppar
               </span>
             </div>
             
@@ -103,7 +103,7 @@ const Footer = () => {
         {/* Bottom row of footer */}
         <div className="border-t border-white/[0.04] pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-[10px] font-mono text-white/30 tracking-widest uppercase">
-            <span>© {currentYear} JYOTIKA UPPAR. STACK OPTIMIZED // LATENCY EXCELLENT</span>
+            <span>© {currentYear} Jyotika Uppar. STACK OPTIMIZED // LATENCY EXCELLENT</span>
           </div>
 
           {/* Magnetic back to top */}

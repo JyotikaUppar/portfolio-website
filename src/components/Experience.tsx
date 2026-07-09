@@ -5,25 +5,25 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const milestones = [
     {
-      period: "June 2026",
-      role: "Web Development Intern",
-      institution: "She Can Foundation (Remote)",
+      period: "[Date Range]",
+      role: "[Role / Position]",
+      institution: "[Company / Organization]",
       description: "Developed a responsive web form using HTML, CSS, and JavaScript as part of the Full Stack Development Internship Task. Implemented user input fields including Name, Email, and Message with secure form submission, and added client-side validation logic to provide immediate feedback.",
       icon: <Code2 size={16} className="text-white" />,
       tag: "Industry Experience"
     },
     {
-      period: "2023 — 2026",
+      period: "[Date Range]",
       role: "Bachelor of Science in Information Technology",
-      institution: "S.N.D.T Women's University, Mumbai",
-      description: "Building a strong foundation in programming, data structures, databases, and web development through my BSc IT coursework. I focus on practical full-stack projects and problem-solving while maintaining a 7.60 CGPA.",
+      institution: "[Your University]",
+      description: "Building a strong foundation in programming, data structures, databases, and web development through my BSc IT coursework. I focus on practical full-stack projects and problem-solving while maintaining a [CGPA].",
       icon: <GraduationCap size={16} className="text-white" />,
       tag: "Academic Crucible"
     },
   ];
 
   return (
-    <section id="experience" className="py-32 relative overflow-hidden bg-[#0D1117]">
+    <section id="experience" className="py-32 relative overflow-hidden bg-[#0D1117]/60 backdrop-blur-sm">
       {/* Decorative vertical grid lines */}
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-[1px] h-full bg-white/[0.01] pointer-events-none" />
@@ -37,7 +37,7 @@ const Experience = () => {
               [ 04 // TIMELINE ]
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white uppercase">
-              EXPERIENCE & <span className="text-white/40 italic font-light font-sans lowercase">milestones</span>
+              EXPERIENCE & <span className="text-white/40 italic font-light font-sans lowercase">[experience]</span>
             </h2>
           </div>
           
