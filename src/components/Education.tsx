@@ -40,7 +40,7 @@ const Education = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Academic <span className="text-gradient">[education]</span>
+            Academic <span className="text-gradient">Education</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
             My foundation in Information Technology, focusing on modern engineering principles and continuous growth.

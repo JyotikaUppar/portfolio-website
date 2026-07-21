@@ -69,7 +69,7 @@ const About = () => {
                 Creating hyper-focused digital experiences that feel responsive and alive.
               </h3>
               <p className="text-sm md:text-base text-white/50 leading-relaxed space-y-4 max-w-2xl font-light">
-                I am a [education] student at [Your University], having completed my [education] from [Your University]. I view software engineering not just as a syntax problem, but as the editorial composition of user flows, latency reduction, and predictive AI utilities.
+                I am a MSC IT student at Mumbai University, having completed my BSC IT from Sndt University. I view software engineering not just as a syntax problem, but as the editorial composition of user flows, latency reduction, and predictive AI utilities.
               </p>
             </div>
 
@@ -77,37 +77,6 @@ const About = () => {
               <span className="flex items-center gap-1.5"><ShieldCheck size={12} className="text-white/60" /> Full-Stack Architecture</span>
               <span className="flex items-center gap-1.5"><Cpu size={12} className="text-white/60" /> Neural Integration</span>
               <span className="flex items-center gap-1.5"><Activity size={12} className="text-white/60" /> Fluid Motion Systems</span>
-            </div>
-          </motion.div>
-
-          {/* Card 2: Academic Statistics */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-card glass-card-hover rounded-3xl p-8 flex flex-col justify-between border border-white/[0.04]"
-          >
-            <div>
-              <div className="flex items-center gap-3 text-white/40 mb-6 font-mono text-xs tracking-widest uppercase">
-                <Landmark size={14} />
-                <span>Academic Standing</span>
-              </div>
-              <div className="space-y-6">
-                <div>
-                  <div className="text-5xl font-black text-white tracking-tighter">7.69</div>
-                  <div className="text-[10px] font-mono tracking-widest text-white/30 uppercase mt-1">[education] Overall CGPA</div>
-                </div>
-                <div className="h-[1px] bg-white/[0.04]" />
-                <div>
-                  <div className="text-4xl font-black text-white/70 tracking-tighter">Master's Degree</div>
-                  <div className="text-[10px] font-mono tracking-widest text-white/30 uppercase mt-1">Pursuing (2026 — 2028)</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 font-mono text-[10px] tracking-wider text-white/30 uppercase">
-              [Your University]
             </div>
           </motion.div>
 
