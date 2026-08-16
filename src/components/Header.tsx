@@ -33,15 +33,14 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center py-6 pointer-events-none">
       <div className="w-full max-w-6xl px-6 pointer-events-auto">
-        <nav 
-          className={`flex items-center justify-between mx-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] px-8 py-3 rounded-full border ${
-            isScrolled 
-              ? 'glass-card border-[rgba(0,200,150,0.14)] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.55)] scale-95 py-2.5 backdrop-blur-2xl bg-[#161B22]/90' 
+        <nav
+          className={`flex items-center justify-between mx-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] px-8 py-3 rounded-full border ${isScrolled
+              ? 'glass-card border-[rgba(0,200,150,0.14)] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.55)] scale-95 py-2.5 backdrop-blur-2xl bg-[#161B22]/90'
               : 'bg-transparent border-transparent'
-          }`}
+            }`}
         >
           {/* Logo */}
-          <div 
+          <div
             className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
@@ -74,7 +73,7 @@ const Header = () => {
               download
               className="flex items-center gap-1.5 px-5 py-2 text-xs font-mono uppercase border border-white/[0.08] rounded-full text-white bg-white/[0.02] hover:bg-white hover:text-black hover:border-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95"
             >
-              <span>[Resume]</span>
+              <span>Resume</span>
               <Download size={12} />
             </a>
           </div>
