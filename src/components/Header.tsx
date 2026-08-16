@@ -70,7 +70,7 @@ const Header = () => {
           {/* CTA / Resume Download */}
           <div className="hidden md:flex items-center">
             <a
-              href="src\assests\JyotikaUppar.pdf"
+              href="/JyotikaUppar.pdf"
               download
               className="flex items-center gap-1.5 px-5 py-2 text-xs font-mono uppercase border border-white/[0.08] rounded-full text-white bg-white/[0.02] hover:bg-white hover:text-black hover:border-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95"
             >
@@ -110,7 +110,7 @@ const Header = () => {
                 ))}
                 <div className="h-[1px] bg-white/5 w-full my-2"></div>
                 <a
-                  href="src\assests\JyotikaUppar.pdf"
+                  href="/JyotikaUppar.pdf"
                   download
                   className="w-full py-4 text-sm font-mono uppercase bg-white text-black font-semibold rounded-full flex items-center justify-center gap-2 hover:bg-[#eaeaea] transition-colors"
                 >

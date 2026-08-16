@@ -30,7 +30,7 @@ const About = () => {
   return (
     <section id="about" className="py-32 relative overflow-hidden bg-[#111820]/60 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
-        
+
         {/* Section Header */}
         <div className="w-full flex flex-col md:flex-row md:items-end justify-between border-b border-white/[0.04] pb-10 mb-20">
           <div className="max-w-xl">
@@ -41,7 +41,7 @@ const About = () => {
               ABOUT <span className="text-white/40 italic font-light font-sans lowercase">[about]</span>
             </h2>
           </div>
-          
+
           <p className="text-xs font-mono tracking-widest text-white/30 uppercase mt-4 md:mt-0">
             BRIDGING COMPUTATIONAL THEORY & USER INTERACTION
           </p>
@@ -49,7 +49,7 @@ const About = () => {
 
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
+
           {/* Card 1: Main Philosophy (Takes 2 cols on lg) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -59,7 +59,7 @@ const About = () => {
             className="lg:col-span-2 glass-card glass-card-hover rounded-3xl p-8 md:p-10 flex flex-col justify-between relative overflow-hidden border border-white/[0.04]"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.01] rounded-full blur-3xl pointer-events-none" />
-            
+
             <div>
               <div className="flex items-center gap-3 text-white/40 mb-8 font-mono text-xs tracking-widest uppercase">
                 <User size={14} />
@@ -93,7 +93,7 @@ const About = () => {
                 <Activity size={14} />
                 <span>Local Ticker Widget</span>
               </div>
-              
+
               <div className="space-y-5 font-mono">
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-white/40">SYSTEM:</span>
@@ -104,12 +104,12 @@ const About = () => {
                   <span className="text-white/80 font-bold">{latency} ms</span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-white/40">CLOCK (UTC):</span>
+                  <span className="text-white/40">CLOCK (IST):</span>
                   <span className="text-white/80 font-bold">{currentTime}</span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-white/40">LOCATION:</span>
-                  <span className="text-white/80 font-bold">[Location]</span>
+                  <span className="text-white/80 font-bold">Mumbai</span>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ const About = () => {
                 <BookOpen size={14} />
                 <span>Focus Frameworks</span>
               </div>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <h4 className="text-sm font-semibold text-white font-mono uppercase tracking-wider mb-2">01 // Intelligent Web</h4>
