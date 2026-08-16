@@ -133,6 +133,6 @@ This project is licensed under the **MIT License**.
 ## Contact
 
 👩 Author: **Jyotika Uppar**
-📧 Email: *(jayauppar2@gmail.com)*
+📧 Email: *(upparjyotika@gmail.com)*
 🌐 Portfolio: [Portfolio Website](https://fluffy-squirrel-b0e004.netlify.app/)
 

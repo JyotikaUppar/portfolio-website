@@ -304,7 +304,7 @@ const Projects = () => {
       problem: "Students preparing for coding interviews need a consistent way to practice DSA questions, review company-focused topics, and track learning momentum.",
       solution: "Built a Daily DSA platform with curated coding challenges, topic-based interview question collections, and progress-focused learning sections for structured algorithm practice.",
       tech: ["React", "JavaScript", "CSS", "Vercel", "GitHub"],
-      github: "https://github.com/[Your Github]/dailydsa",
+      github: "https://github.com/JyotikaUppar/dailydsa",
       demo: "https://dailydsa91.vercel.app/",
       stats: "FOCUS: DSA // MODE: DAILY PRACTICE"
     },
@@ -314,8 +314,8 @@ const Projects = () => {
       problem: "Early health-risk screening is difficult when symptoms and clinical indicators are scattered across forms, notes, or disconnected datasets.",
       solution: "Created a disease prediction system that processes user health inputs and applies machine learning logic to estimate possible disease outcomes for faster preliminary awareness.",
       tech: ["Python", "Machine Learning", "Data Analysis", "Healthcare AI", "GitHub"],
-      github: "https://github.com/[Your Github]/DiseasePrediction",
-      demo: "https://github.com/[Your Github]/DiseasePrediction",
+      github: "https://github.com/JyotikaUppar/DiseasePrediction",
+      demo: "https://github.com/JyotikaUppar/DiseasePrediction",
       stats: "DOMAIN: HEALTHCARE // TYPE: ML MODEL"
     },
     {
@@ -324,8 +324,8 @@ const Projects = () => {
       problem: "Construction teams suffer from disorganized asset logs, out-of-sync schedules, and complex resource allocations scattered across separate systems.",
       solution: "Developed a full-stack construction management application with SQL databases and robust backend routing, helping teams centralize resources, monitor timelines, and track worksite progress.",
       tech: ["Node.js", "Express.js", "MySQL", "JavaScript", "HTML/CSS", "Git"],
-      github: "https://github.com/[Your Github]/Construction",
-      demo: "https://github.com/[Your Github]/Construction",
+      github: "https://github.com/JyotikaUppar/Construction",
+      demo: "https://github.com/JyotikaUppar/Construction",
       stats: "STACK: FULL-STACK // TYPE: MANAGEMENT PLATFORM"
     },
     {
@@ -334,8 +334,8 @@ const Projects = () => {
       problem: "Traditional image processing and verification workflows require manual validation and struggle with real-time video stream low-latency requirements.",
       solution: "Engineered a high-performance facial recognition and tracking system using Python and computer vision models, capable of processing video frames to detect, align, and match user faces.",
       tech: ["Python", "OpenCV", "Machine Learning", "Computer Vision", "Git"],
-      github: "https://github.com/[Your Github]/FaceTrace",
-      demo: "https://github.com/[Your Github]/FaceTrace",
+      github: "https://github.com/JyotikaUppar/FaceTrace",
+      demo: "https://github.com/JyotikaUppar/FaceTrace",
       stats: "ENGINE: OPENCV // TYPE: COMPUTER VISION API"
     }
   ];

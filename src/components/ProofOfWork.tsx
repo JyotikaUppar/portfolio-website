@@ -62,7 +62,7 @@ const ProofOfWork = () => {
               </div>
 
               <a 
-                href="https://github.com/[Your Github]" 
+                href="https://github.com/JyotikaUppar" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full btn-secondary flex items-center justify-center space-x-3 py-4 group"

@@ -15,9 +15,9 @@ const LetsTalk = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const phone = '[Your Phone]';
-  const phoneHref = 'tel:[Your Phone]';
-  const whatsappHref = 'https://wa.me/[Your Phone]?text=Hi%20Jyotika%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect!';
+  const phone = '9324781880';
+  const phoneHref = 'tel:+919324781880';
+  const whatsappHref = 'https://wa.me/919324781880?text=Hi%20Jyotika%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect!';
 
   return (
     <>
@@ -99,7 +99,7 @@ const LetsTalk = () => {
                   </div>
 
                   <p className="text-[9px] font-mono text-white/20 text-center uppercase tracking-wider mt-4">
-                    [Location] · UTC [Timezone]
+                    India · UTC +5:30
                   </p>
                 </motion.div>
               )}

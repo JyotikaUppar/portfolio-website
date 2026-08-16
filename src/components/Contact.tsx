@@ -35,7 +35,8 @@ const Contact = () => {
     setIsSending(true);
     
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/contact';
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,10 +70,10 @@ const Contact = () => {
   };
 
   const socialChannels = [
-    { name: 'Phone', url: 'tel:[Your Phone]', icon: <Phone size={14} />, desc: '[Your Phone]' },
-    { name: 'Github', url: 'https://github.com/[Your Github]', icon: <Github size={14} />, desc: '@[Your Github]' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/[Your LinkedIn]/', icon: <Linkedin size={14} />, desc: '[Your LinkedIn]' },
-    { name: 'Email', url: 'mailto:[Your Email]', icon: <Mail size={14} />, desc: '[Your Email]' }
+    { name: 'Phone', url: 'tel:+919324781880', icon: <Phone size={14} />, desc: '+91 9324781880' },
+    { name: 'Github', url: 'https://github.com/JyotikaUppar', icon: <Github size={14} />, desc: '@JyotikaUppar' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jyotika-u/', icon: <Linkedin size={14} />, desc: 'jyotika-u' },
+    { name: 'Email', url: 'mailto:upparjyotika@gmail.com', icon: <Mail size={14} />, desc: 'upparjyotika@gmail.com' }
   ];
 
   return (

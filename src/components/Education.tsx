@@ -29,7 +29,7 @@ const Education = () => {
       calendarIconColor: "text-blue-500",
       awardIconColor: "text-purple-500",
       details: [
-        { label: "Overall CGPA", value: "[CGPA]" },
+        { label: "Overall CGPA", value: "7.69" },
         { label: "Project Focus", value: "Full-Stack Web Architectures & Artificial Intelligence Integrations" }
       ]
     }

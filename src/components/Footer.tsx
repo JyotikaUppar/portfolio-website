@@ -12,9 +12,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <Github size={18} />, url: 'https://github.com/[Your Github]' },
-    { icon: <Linkedin size={18} />, url: 'https://www.linkedin.com/in/[Your LinkedIn]/' },
-    { icon: <Mail size={18} />, url: 'mailto:[Your Email]' }
+    { icon: <Github size={18} />, url: 'https://github.com/JyotikaUppar' },
+    { icon: <Linkedin size={18} />, url: 'https://www.linkedin.com/in/jyotika-u/' },
+    { icon: <Mail size={18} />, url: 'mailto:upparjyotika@gmail.com' }
   ];
 
   return (
